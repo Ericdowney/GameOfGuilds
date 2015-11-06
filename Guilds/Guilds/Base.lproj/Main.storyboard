@@ -183,18 +183,27 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-le-5lk">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.56862745100000001" green="0.54901960780000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="NSC-Rd-Mcz" firstAttribute="bottom" secondItem="8zj-6l-vvc" secondAttribute="bottomMargin" id="8DS-iv-5d4"/>
+                                            <constraint firstItem="dyZ-le-5lk" firstAttribute="centerY" secondItem="NSC-Rd-Mcz" secondAttribute="centerY" id="IJo-Sf-7OS"/>
                                             <constraint firstItem="NSC-Rd-Mcz" firstAttribute="top" secondItem="8zj-6l-vvc" secondAttribute="topMargin" id="JhL-QG-mml"/>
+                                            <constraint firstItem="dyZ-le-5lk" firstAttribute="leading" secondItem="NSC-Rd-Mcz" secondAttribute="trailing" constant="8" symbolic="YES" id="PtJ-Mi-egT"/>
                                             <constraint firstAttribute="height" constant="40" id="UTy-FQ-24a"/>
                                             <constraint firstItem="NSC-Rd-Mcz" firstAttribute="leading" secondItem="8zj-6l-vvc" secondAttribute="leadingMargin" id="bXv-AD-hPJ"/>
-                                            <constraint firstItem="NSC-Rd-Mcz" firstAttribute="trailing" secondItem="8zj-6l-vvc" secondAttribute="trailingMargin" id="rKx-Th-hPy"/>
+                                            <constraint firstItem="NSC-Rd-Mcz" firstAttribute="trailing" secondItem="8zj-6l-vvc" secondAttribute="trailingMargin" id="rKx-Th-hPy">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="-30"/>
+                                            </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="NSC-Rd-Mcz"/>
+                                                <exclude reference="dyZ-le-5lk"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="UTy-FQ-24a"/>
@@ -202,11 +211,14 @@
                                                 <exclude reference="JhL-QG-mml"/>
                                                 <exclude reference="bXv-AD-hPJ"/>
                                                 <exclude reference="rKx-Th-hPy"/>
+                                                <exclude reference="IJo-Sf-7OS"/>
+                                                <exclude reference="PtJ-Mi-egT"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="NSC-Rd-Mcz"/>
+                                                <include reference="dyZ-le-5lk"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="UTy-FQ-24a"/>
@@ -214,6 +226,8 @@
                                                 <include reference="JhL-QG-mml"/>
                                                 <include reference="bXv-AD-hPJ"/>
                                                 <include reference="rKx-Th-hPy"/>
+                                                <include reference="IJo-Sf-7OS"/>
+                                                <include reference="PtJ-Mi-egT"/>
                                             </mask>
                                         </variation>
                                     </view>
