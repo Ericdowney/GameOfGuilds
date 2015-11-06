@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Designables
 import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: ImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

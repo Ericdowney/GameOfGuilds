@@ -129,7 +129,7 @@
 			children = (
 				89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */,
 				89B5DE071BE2C00300DD06C5 /* ViewController.swift */,
-				89B5DE091BE2C00300DD06C5 /* Main.storyboard */,
+				89B5DF121BEC4F1D00DD06C5 /* Storyboards */,
 				89B5DE0C1BE2C00300DD06C5 /* Assets.xcassets */,
 				89B5DE0E1BE2C00300DD06C5 /* LaunchScreen.storyboard */,
 				89B5DE111BE2C00300DD06C5 /* Info.plist */,
@@ -153,6 +153,14 @@
 				89B5DE271BE2C00400DD06C5 /* Info.plist */,
 			);
 			path = GuildsUITests;
+			sourceTree = "<group>";
+		};
+		89B5DF121BEC4F1D00DD06C5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				89B5DE091BE2C00300DD06C5 /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
