@@ -14,6 +14,12 @@
 		89B5DE101BE2C00300DD06C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE0E1BE2C00300DD06C5 /* LaunchScreen.storyboard */; };
 		89B5DE1B1BE2C00300DD06C5 /* GuildsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE1A1BE2C00300DD06C5 /* GuildsTests.swift */; };
 		89B5DE261BE2C00400DD06C5 /* GuildsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE251BE2C00400DD06C5 /* GuildsUITests.swift */; };
+		89B5DEA71BEC315D00DD06C5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA41BEC315D00DD06C5 /* Bolts.framework */; };
+		89B5DEA81BEC315D00DD06C5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA51BEC315D00DD06C5 /* Parse.framework */; };
+		89B5DEA91BEC315D00DD06C5 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA61BEC315D00DD06C5 /* ParseUI.framework */; };
+		89B5DEAB1BEC319C00DD06C5 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B5DEA41BEC315D00DD06C5 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89B5DEAC1BEC319C00DD06C5 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B5DEA51BEC315D00DD06C5 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89B5DEAD1BEC319C00DD06C5 /* ParseUI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B5DEA61BEC315D00DD06C5 /* ParseUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		89B5DEAA1BEC319300DD06C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				89B5DEAB1BEC319C00DD06C5 /* Bolts.framework in CopyFiles */,
+				89B5DEAC1BEC319C00DD06C5 /* Parse.framework in CopyFiles */,
+				89B5DEAD1BEC319C00DD06C5 /* ParseUI.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +68,9 @@
 		89B5DE211BE2C00300DD06C5 /* GuildsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE251BE2C00400DD06C5 /* GuildsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsUITests.swift; sourceTree = "<group>"; };
 		89B5DE271BE2C00400DD06C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B5DEA41BEC315D00DD06C5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Rome/Bolts.framework; sourceTree = "<group>"; };
+		89B5DEA51BEC315D00DD06C5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Rome/Parse.framework; sourceTree = "<group>"; };
+		89B5DEA61BEC315D00DD06C5 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../Rome/ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B5DEA91BEC315D00DD06C5 /* ParseUI.framework in Frameworks */,
+				89B5DEA81BEC315D00DD06C5 /* Parse.framework in Frameworks */,
+				89B5DEA71BEC315D00DD06C5 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +104,9 @@
 		89B5DDF91BE2C00300DD06C5 = {
 			isa = PBXGroup;
 			children = (
+				89B5DEA41BEC315D00DD06C5 /* Bolts.framework */,
+				89B5DEA51BEC315D00DD06C5 /* Parse.framework */,
+				89B5DEA61BEC315D00DD06C5 /* ParseUI.framework */,
 				89B5DE041BE2C00300DD06C5 /* Guilds */,
 				89B5DE191BE2C00300DD06C5 /* GuildsTests */,
 				89B5DE241BE2C00300DD06C5 /* GuildsUITests */,
@@ -135,6 +165,7 @@
 				89B5DDFE1BE2C00300DD06C5 /* Sources */,
 				89B5DDFF1BE2C00300DD06C5 /* Frameworks */,
 				89B5DE001BE2C00300DD06C5 /* Resources */,
+				89B5DEAA1BEC319300DD06C5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -397,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Rome/";
 				INFOPLIST_FILE = Guilds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icct.Guilds;
@@ -408,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Rome/";
 				INFOPLIST_FILE = Guilds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icct.Guilds;
@@ -482,6 +515,7 @@
 				89B5DE2C1BE2C00400DD06C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89B5DE2D1BE2C00400DD06C5 /* Build configuration list for PBXNativeTarget "GuildsTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +524,7 @@
 				89B5DE2F1BE2C00400DD06C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89B5DE301BE2C00400DD06C5 /* Build configuration list for PBXNativeTarget "GuildsUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +533,7 @@
 				89B5DE321BE2C00400DD06C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
