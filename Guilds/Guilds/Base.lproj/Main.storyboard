@@ -141,7 +141,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.56862745098039214" green="0.5490196078431373" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.63921568627450975" alpha="0.75" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Mx3-wW-xA0"/>
                                             <constraint firstItem="R58-qU-9jy" firstAttribute="top" secondItem="XN0-7r-IUJ" secondAttribute="topMargin" id="VX2-zk-ZB6"/>
@@ -188,7 +188,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.56862745100000001" green="0.54901960780000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.63921568627450975" alpha="0.75" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="NSC-Rd-Mcz" firstAttribute="bottom" secondItem="8zj-6l-vvc" secondAttribute="bottomMargin" id="8DS-iv-5d4"/>
                                             <constraint firstItem="dyZ-le-5lk" firstAttribute="centerY" secondItem="NSC-Rd-Mcz" secondAttribute="centerY" id="IJo-Sf-7OS"/>
@@ -207,12 +207,12 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="UTy-FQ-24a"/>
+                                                <exclude reference="IJo-Sf-7OS"/>
+                                                <exclude reference="PtJ-Mi-egT"/>
                                                 <exclude reference="8DS-iv-5d4"/>
                                                 <exclude reference="JhL-QG-mml"/>
                                                 <exclude reference="bXv-AD-hPJ"/>
                                                 <exclude reference="rKx-Th-hPy"/>
-                                                <exclude reference="IJo-Sf-7OS"/>
-                                                <exclude reference="PtJ-Mi-egT"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -222,12 +222,12 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="UTy-FQ-24a"/>
+                                                <include reference="IJo-Sf-7OS"/>
+                                                <include reference="PtJ-Mi-egT"/>
                                                 <include reference="8DS-iv-5d4"/>
                                                 <include reference="JhL-QG-mml"/>
                                                 <include reference="bXv-AD-hPJ"/>
                                                 <include reference="rKx-Th-hPy"/>
-                                                <include reference="IJo-Sf-7OS"/>
-                                                <include reference="PtJ-Mi-egT"/>
                                             </mask>
                                         </variation>
                                     </view>
