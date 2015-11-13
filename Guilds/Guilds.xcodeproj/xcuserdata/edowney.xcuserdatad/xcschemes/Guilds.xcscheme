@@ -52,16 +52,6 @@
                ReferencedContainer = "container:Guilds.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89B5DE201BE2C00300DD06C5"
-               BuildableName = "GuildsUITests.xctest"
-               BlueprintName = "GuildsUITests"
-               ReferencedContainer = "container:Guilds.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
