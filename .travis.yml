@@ -1,4 +1,5 @@
 language: objective-c
+gemfile: ./Gemfile
 osx_image: xcode7.1
 podfile: ./Podfile
 sudo: required
