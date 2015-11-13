@@ -1,5 +1,5 @@
 language: objective-c
-source 'https://rubygems.org'
+source: https://rubygems.org
 gemfile: ./Gemfile
 osx_image: xcode7.1
 podfile: ./Podfile
