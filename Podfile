@@ -7,4 +7,3 @@ workspace 'GameOfGuilds'
 
 pod 'Bolts'
 pod 'Parse'
-pod 'ParseUI'
