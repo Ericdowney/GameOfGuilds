@@ -15,8 +15,15 @@ class AccountViewLogic: NSObject {
         super.init()
     }
     
-    func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber: String) -> PFObject {
-        return PFObject(className: "User")
+    func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber phone: String) -> PFObject {
+        let userObject = PFObject(className: "User")
+        userObject["username"] = username
+        userObject["password"] = pass.0
+        userObject["firstName"] = name.0
+        userObject["lastName"] = name.1
+        userObject["email"] = email
+        userObject["phoneNumber"] = phone
+        return userObject;
     }
     
 }

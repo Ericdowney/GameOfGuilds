@@ -25,13 +25,13 @@ class AccountViewLogicTests: XCTestCase {
     
     func testShouldCreateAPFObjectOnCreateAccount() {
         let accountLogic = AccountViewLogic()
-        let username = ""
-        let password = ""
-        let confirmPass = ""
-        let firstName = ""
-        let lastName = ""
-        let email = ""
-        let phoneNum = ""
+        let username = "edowney"
+        let password = "password123"
+        let confirmPass = "password123"
+        let firstName = "eric"
+        let lastName = "downey"
+        let email = "edowney@icct.com"
+        let phoneNum = "6147740435"
         
         let userObj = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
         
