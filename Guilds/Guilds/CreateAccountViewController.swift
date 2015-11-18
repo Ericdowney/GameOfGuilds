@@ -1,17 +1,14 @@
 //
-//  ViewController.swift
+//  CreateAccountViewController.swift
 //  Guilds
 //
-//  Created by Downey, Eric on 10/29/15.
+//  Created by Downey, Eric on 11/18/15.
 //  Copyright © 2015 ICCT. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var imageView: ImageView!
+class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +18,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

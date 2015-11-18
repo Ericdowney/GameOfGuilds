@@ -73,7 +73,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.81568627450980391" green="0.29411764705882354" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="nQL-YN-5v0" secondAttribute="bottom" constant="9" id="0bG-xx-4hP"/>
                                             <constraint firstItem="nQL-YN-5v0" firstAttribute="top" secondItem="fBE-Ee-t9M" secondAttribute="bottom" constant="8" symbolic="YES" id="0bR-Tm-WTq"/>
@@ -238,7 +237,7 @@
                                             <constraint firstAttribute="height" constant="185" id="jb4-uc-3Ix"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QSz-A0-xec">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QSz-A0-xec">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QSz-A0-xec" id="jeb-wI-oK1">
@@ -275,7 +274,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="28o-zl-4Gk" customClass="ImageView" customModule="Designables">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="28o-zl-4Gk" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Uu0-s4-clA"/>
