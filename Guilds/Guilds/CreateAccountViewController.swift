@@ -10,6 +10,8 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     
+    var accountLogic: AccountViewLogic?
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!

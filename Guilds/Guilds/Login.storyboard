@@ -141,7 +141,6 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="forgot:" destination="pAB-jz-af2" eventType="touchUpInside" id="R2Y-FM-yjy"/>
                                             <segue destination="Unu-N6-vVm" kind="show" id="Qlm-54-a9K"/>
                                         </connections>
                                     </button>
@@ -179,7 +178,6 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="create:" destination="pAB-jz-af2" eventType="touchUpInside" id="ecc-Lw-Zbk"/>
                                             <segue destination="KnZ-UI-05g" kind="show" id="C7e-jP-GKC"/>
                                         </connections>
                                     </button>

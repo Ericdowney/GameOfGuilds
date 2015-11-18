@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Parse
 
 class LoginViewController: UIViewController {
+    
+    var accountLogic: AccountViewLogic?
         
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -28,18 +29,16 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+    }
+    
     // MARK: - Actions
     
     
     @IBAction func login(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func forgot(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func create(sender: AnyObject) {
         
     }
 }

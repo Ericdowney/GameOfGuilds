@@ -14,12 +14,14 @@
 		89A8C52E1BFB657B0017C319 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C52A1BFB657B0017C319 /* Label.swift */; };
 		89A8C52F1BFB657B0017C319 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C52B1BFB657B0017C319 /* View.swift */; };
 		89A8C5321BFCC0350017C319 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5311BFCC0350017C319 /* CreateAccountViewController.swift */; };
+		89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5341BFCD8F20017C319 /* AccountViewLogic.swift */; };
+		89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */; };
+		89A8C5381BFCDFDB0017C319 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA51BEC315D00DD06C5 /* Parse.framework */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
 		89B5DE0D1BE2C00300DD06C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE0C1BE2C00300DD06C5 /* Assets.xcassets */; };
 		89B5DE101BE2C00300DD06C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE0E1BE2C00300DD06C5 /* LaunchScreen.storyboard */; };
-		89B5DE1B1BE2C00300DD06C5 /* GuildsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE1A1BE2C00300DD06C5 /* GuildsTests.swift */; };
 		89B5DE261BE2C00400DD06C5 /* GuildsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE251BE2C00400DD06C5 /* GuildsUITests.swift */; };
 		89B5DEA71BEC315D00DD06C5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA41BEC315D00DD06C5 /* Bolts.framework */; };
 		89B5DEA81BEC315D00DD06C5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B5DEA51BEC315D00DD06C5 /* Parse.framework */; };
@@ -66,6 +68,8 @@
 		89A8C52A1BFB657B0017C319 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		89A8C52B1BFB657B0017C319 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		89A8C5311BFCC0350017C319 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		89A8C5341BFCD8F20017C319 /* AccountViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewLogic.swift; sourceTree = "<group>"; };
+		89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewLogicTests.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +78,6 @@
 		89B5DE0F1BE2C00300DD06C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89B5DE111BE2C00300DD06C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B5DE161BE2C00300DD06C5 /* GuildsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89B5DE1A1BE2C00300DD06C5 /* GuildsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsTests.swift; sourceTree = "<group>"; };
 		89B5DE1C1BE2C00300DD06C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B5DE211BE2C00300DD06C5 /* GuildsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuildsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE251BE2C00400DD06C5 /* GuildsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsUITests.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A8C5381BFCDFDB0017C319 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +128,7 @@
 		89A8C5331BFCC03A0017C319 /* Account Login/Registration */ = {
 			isa = PBXGroup;
 			children = (
+				89A8C5341BFCD8F20017C319 /* AccountViewLogic.swift */,
 				89A8C5241BFB64CE0017C319 /* LoginViewController.swift */,
 				89A8C5311BFCC0350017C319 /* CreateAccountViewController.swift */,
 			);
@@ -170,7 +175,7 @@
 		89B5DE191BE2C00300DD06C5 /* GuildsTests */ = {
 			isa = PBXGroup;
 			children = (
-				89B5DE1A1BE2C00300DD06C5 /* GuildsTests.swift */,
+				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
 				89B5DE1C1BE2C00300DD06C5 /* Info.plist */,
 			);
 			path = GuildsTests;
@@ -329,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A8C52D1BFB657B0017C319 /* ImageView.swift in Sources */,
+				89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */,
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
 				89A8C52E1BFB657B0017C319 /* Label.swift in Sources */,
 				89B5DE081BE2C00300DD06C5 /* ViewController.swift in Sources */,
@@ -343,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B5DE1B1BE2C00300DD06C5 /* GuildsTests.swift in Sources */,
+				89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,10 +507,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Rome/";
 				INFOPLIST_FILE = GuildsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icct.GuildsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guilds.app/Guilds";
 			};
 			name = Debug;
@@ -513,6 +522,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Rome/";
 				INFOPLIST_FILE = GuildsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icct.GuildsTests;
