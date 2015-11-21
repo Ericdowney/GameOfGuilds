@@ -7,38 +7,18 @@
 //
 
 import XCTest
-import Parse
 
 @testable import Guilds
 
 class AccountViewLogicTests: XCTestCase {
     
-    // MARK: - Spys
-    
-    private class ParseWrapperSpy: ParseWrapper {
-        var spy_saved = false
-        private override func saveObject(className: String, dictionary: [String : AnyObject]) -> BFTask {
-            self.spy_saved = true
-            return BFTask();
-        }
-    }
-    
-    private class ViewControllerSpy: UIViewController {
-        var spy_presentedViewController = false
-        private override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
-            self.spy_presentedViewController = true
-        }
-    }
-    
-    // MARK: - Tests
+    // MARK: - Black Box Tests
     
     func testShouldDefaultInitializeAccountViewLogic() {
         let accountLogic = AccountViewLogic()
         
         XCTAssertNotNil(accountLogic)
     }
-    
-    // MARK: - Black Box Tests
     
     func testShouldCallSaveObjectOnParseWrapperOnCreate() {
         let parseSpy = ParseWrapperSpy()

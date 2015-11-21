@@ -12,15 +12,6 @@ import XCTest
 
 class CreateAccountViewControllerTests: XCTestCase {
     
-    // MARK: - Spys
-    
-    private class AccountViewLogicSpy: AccountViewLogic {
-        var spy_createdAccount = false
-        private override func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String) {
-            self.spy_createdAccount = true
-        }
-    }
-    
     // MARK: - Black Box Tests
     
     func testShouldCreateACreateAccountViewController() {

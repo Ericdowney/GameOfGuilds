@@ -12,10 +12,6 @@ import XCTest
 
 class LoginViewControllerTests: XCTestCase {
     
-    // MARK: - Spys
-    
-    
-    
     // MARK: - Tests
 
     func testShouldCreateALoginViewController() {
