@@ -12,13 +12,13 @@ import UIKit
 @IBDesignable
 public class View: UIView {
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             self.setup()
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
         didSet {
             self.setup()
         }

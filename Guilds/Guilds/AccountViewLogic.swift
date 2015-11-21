@@ -7,23 +7,44 @@
 //
 
 import UIKit
-import Parse
 
-class AccountViewLogic: NSObject {
+class AccountViewLogic: ViewLogic {
+    
+    var parseWrapper: ParseWrapper
     
     override init() {
+        self.parseWrapper = ParseWrapper()
         super.init()
     }
     
-    func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber phone: String) -> PFObject {
-        let userObject = PFObject(className: "User")
-        userObject["username"] = username
-        userObject["password"] = pass.0
-        userObject["firstName"] = name.0
-        userObject["lastName"] = name.1
-        userObject["email"] = email
-        userObject["phoneNumber"] = phone
-        return userObject;
+    init(wrapper: ParseWrapper) {
+        self.parseWrapper = wrapper
+        super.init()
     }
     
+    func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber phone: String) -> Bool {
+        if pass.0 != pass.1 {
+            return false;
+        }
+        
+        self.parseWrapper.saveObject("User", dictionary: [
+            "username": username,
+            "password": pass.0,
+            "firstName": name.0,
+            "lastName": name.1,
+            "email": email,
+            "phoneNumber": phone
+        ])
+        return true;
+    }
+    
+    func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertControllerStyle.Alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(cancel)
+        
+        viewCtrl.presentViewController(alert, animated: true, completion: nil)
+        
+        return alert;
+    }
 }

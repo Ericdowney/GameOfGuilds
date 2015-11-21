@@ -8,37 +8,37 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController, ViewLogicContainer {
     
-    var accountLogic: AccountViewLogic?
+    public var viewLogic: ViewLogic?
         
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
     }
     
     // MARK: - Actions
     
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction public func login(sender: AnyObject) {
         
     }
 }

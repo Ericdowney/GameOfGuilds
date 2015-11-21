@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+public class CreateAccountViewController: UIViewController, ViewLogicContainer {
     
-    var accountLogic: AccountViewLogic?
+    public var viewLogic: ViewLogic?
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -22,23 +22,23 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var confirmEmail: UITextField!
     @IBOutlet weak var phoneNum: UITextField!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Actions
     
-    @IBAction func create(sender: AnyObject) {
+    @IBAction public func create(sender: AnyObject) {
         
     }
 }

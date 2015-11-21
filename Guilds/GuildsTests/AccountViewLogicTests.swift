@@ -12,19 +12,35 @@ import Parse
 @testable import Guilds
 
 class AccountViewLogicTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // MARK: - Spys
+    
+    private class ParseWrapperSpy: ParseWrapper {
+        var spy_saved = false
+        private override func saveObject(className: String, dictionary: [String : AnyObject]) -> BFTask {
+            self.spy_saved = true
+            return BFTask();
+        }
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    private class ViewControllerSpy: UIViewController {
+        var spy_presentedViewController = false
+        private override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+            self.spy_presentedViewController = true
+        }
     }
     
-    func testShouldCreateAPFObjectOnCreateAccount() {
+    // MARK: - Tests
+    
+    func testShouldDefaultInitializeAccountViewLogic() {
         let accountLogic = AccountViewLogic()
+        
+        XCTAssertNotNil(accountLogic)
+    }
+    
+    func testShouldCallParseWrapperSaveObjectOnCreateAccount() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let username = "edowney"
         let password = "password123"
         let confirmPass = "password123"
@@ -33,13 +49,37 @@ class AccountViewLogicTests: XCTestCase {
         let email = "edowney@icct.com"
         let phoneNum = "6147740435"
         
-        let userObj = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
+        let success = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
         
-        XCTAssertEqual(userObj["username"] as? String, "edowney")
-        XCTAssertEqual(userObj["password"] as? String, "password123")
-        XCTAssertEqual(userObj["firstName"] as? String, "eric")
-        XCTAssertEqual(userObj["lastName"] as? String, "downey")
-        XCTAssertEqual(userObj["email"] as? String, "edowney@icct.com")
-        XCTAssertEqual(userObj["phoneNumber"] as? String, "6147740435")
+        XCTAssertTrue(success)
+        XCTAssertTrue(parseSpy.spy_saved)
+    }
+    
+    func testShouldGetFalseForCreateAccountWhenPasswordsDoNotMatch() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let username = "edowney"
+        let password = "password123"
+        let confirmPass = "different123"
+        let firstName = "eric"
+        let lastName = "downey"
+        let email = "edowney@icct.com"
+        let phoneNum = "6147740435"
+        
+        let success = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
+        
+        XCTAssertFalse(success)
+        XCTAssertFalse(parseSpy.spy_saved)
+    }
+    
+    func testShouldDisplayAlertViewGivenValidViewController() {
+        let accountLogic = AccountViewLogic()
+        let viewCtrl = ViewControllerSpy()
+        let _ = viewCtrl.view
+        
+        let alert = accountLogic.showErrorAlertViewOn(viewCtrl, withTitle: "Hello", andSubTitle: "how are you?")
+        
+        XCTAssertTrue(viewCtrl.spy_presentedViewController)
+        XCTAssertEqual(alert.actions.count, 1)
     }
 }
