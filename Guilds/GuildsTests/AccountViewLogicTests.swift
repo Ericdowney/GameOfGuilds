@@ -38,6 +38,32 @@ class AccountViewLogicTests: XCTestCase {
         XCTAssertNotNil(accountLogic)
     }
     
+    // MARK: - Black Box Tests
+    
+    func testShouldCallSaveObjectOnParseWrapperOnCreate() {
+        let parseSpy = ParseWrapperSpy()
+        let viewCtrlSpy = ViewControllerSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
+        
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123")
+        
+        XCTAssertTrue(parseSpy.spy_saved)
+    }
+    
+    func testShouldDisplayErrorAlertOnCreate() {
+        let parseSpy = ParseWrapperSpy()
+        let viewCtrlSpy = ViewControllerSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
+        
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "different123")
+        
+        XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
+    }
+    
+    // MARK: - White Box Tests
+    
     func testShouldCallParseWrapperSaveObjectOnCreateAccount() {
         let parseSpy = ParseWrapperSpy()
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
@@ -74,12 +100,11 @@ class AccountViewLogicTests: XCTestCase {
     
     func testShouldDisplayAlertViewGivenValidViewController() {
         let accountLogic = AccountViewLogic()
-        let viewCtrl = ViewControllerSpy()
-        let _ = viewCtrl.view
+        let viewCtrlSpy = ViewControllerSpy()
         
-        let alert = accountLogic.showErrorAlertViewOn(viewCtrl, withTitle: "Hello", andSubTitle: "how are you?")
+        let alert = accountLogic.showErrorAlertViewOn(viewCtrlSpy, withTitle: "Hello", andSubTitle: "how are you?")
         
-        XCTAssertTrue(viewCtrl.spy_presentedViewController)
+        XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
         XCTAssertEqual(alert.actions.count, 1)
     }
 }

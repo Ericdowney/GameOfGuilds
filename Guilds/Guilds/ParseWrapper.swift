@@ -9,9 +9,9 @@
 import Foundation
 import Parse
 
-class ParseWrapper: NSObject {
+public class ParseWrapper: NSObject {
     
-    func saveObject(className: String, dictionary: [String: AnyObject]) -> BFTask {
+    public func saveObject(className: String, dictionary: [String: AnyObject]) -> BFTask {
         let obj = PFObject(className: className)
         for (key, value) in dictionary {
             obj[key] = value
@@ -19,5 +19,4 @@ class ParseWrapper: NSObject {
         
         return obj.saveInBackground();
     }
-    
 }

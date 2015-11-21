@@ -21,24 +21,23 @@ public class CreateAccountViewController: UIViewController, ViewLogicContainer {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var confirmEmail: UITextField!
     @IBOutlet weak var phoneNum: UITextField!
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.viewLogic = AccountViewLogic()
     }
     
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Actions
     
     @IBAction public func create(sender: AnyObject) {
+        let accountLogic = self.viewLogic as? AccountViewLogic
+        let account = GuildAccount(username: self.username.text!, password: self.password.text!, name: (self.firstName.text!,self.lastName.text!), email: self.email.text!, phoneNumber: self.phoneNum.text!)
         
+        accountLogic?.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!)
     }
 }

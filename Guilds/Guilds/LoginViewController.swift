@@ -18,15 +18,11 @@ public class LoginViewController: UIViewController, ViewLogicContainer {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.viewLogic = AccountViewLogic()
     }
     
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Segue

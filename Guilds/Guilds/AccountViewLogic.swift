@@ -8,18 +8,26 @@
 
 import UIKit
 
-class AccountViewLogic: ViewLogic {
+public class AccountViewLogic: ViewLogic {
     
     var parseWrapper: ParseWrapper
     
-    override init() {
+    override public init() {
         self.parseWrapper = ParseWrapper()
         super.init()
     }
     
-    init(wrapper: ParseWrapper) {
+    public init(wrapper: ParseWrapper) {
         self.parseWrapper = wrapper
         super.init()
+    }
+    
+    public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String) {
+        let success = self.createAccountWithUsername(account.username, andConfirmedPassword: (account.password, confirmPassword), forUserWithName: account.name, email: account.email, andPhoneNumber: account.phoneNumber)
+        
+        if !success {
+            self.showErrorAlertViewOn(viewCtrl, withTitle: "Error Creating Account", andSubTitle: "Your passwords must match.")
+        }
     }
     
     func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber phone: String) -> Bool {

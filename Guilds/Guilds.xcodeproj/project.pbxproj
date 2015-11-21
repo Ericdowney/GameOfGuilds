@@ -21,6 +21,9 @@
 		89A8C53D1C010DCC0017C319 /* DesignablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */; };
 		89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C53F1C0111C20017C319 /* GuildProtocols.swift */; };
 		89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5421C01120F0017C319 /* ViewLogic.swift */; };
+		89A8C5461C01155A0017C319 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5451C01155A0017C319 /* Account.swift */; };
+		89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */; };
+		89A8C54C1C011BCA0017C319 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
@@ -78,6 +81,9 @@
 		89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignablesTests.swift; sourceTree = "<group>"; };
 		89A8C53F1C0111C20017C319 /* GuildProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildProtocols.swift; sourceTree = "<group>"; };
 		89A8C5421C01120F0017C319 /* ViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogic.swift; sourceTree = "<group>"; };
+		89A8C5451C01155A0017C319 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewControllerTests.swift; sourceTree = "<group>"; };
+		89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +173,14 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		89A8C5441C0115480017C319 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				89A8C5451C01155A0017C319 /* Account.swift */,
+			);
+			name = Structs;
+			sourceTree = "<group>";
+		};
 		89B5DDF91BE2C00300DD06C5 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				89A8C5411C0112070017C319 /* Base */,
+				89A8C5441C0115480017C319 /* Structs */,
 				89A8C53E1C0111B50017C319 /* Protocols */,
 				89A8C5391BFE122D0017C319 /* Parse */,
 				89A8C5301BFB65800017C319 /* Designables */,
@@ -212,6 +227,8 @@
 			children = (
 				89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */,
 				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
+				89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */,
+				89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */,
 				89B5DE1C1BE2C00300DD06C5 /* Info.plist */,
 			);
 			path = GuildsTests;
@@ -370,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A8C52D1BFB657B0017C319 /* ImageView.swift in Sources */,
+				89A8C5461C01155A0017C319 /* Account.swift in Sources */,
 				89A8C53B1BFE12380017C319 /* ParseWrapper.swift in Sources */,
 				89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */,
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
@@ -388,6 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A8C54C1C011BCA0017C319 /* LoginViewControllerTests.swift in Sources */,
+				89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */,
 				89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */,
 				89A8C53D1C010DCC0017C319 /* DesignablesTests.swift in Sources */,
 			);
