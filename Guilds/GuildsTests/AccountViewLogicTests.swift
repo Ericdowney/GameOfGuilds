@@ -14,10 +14,14 @@ class AccountViewLogicTests: XCTestCase {
     
     // MARK: - Black Box Tests
     
-    func testShouldDefaultInitializeAccountViewLogic() {
-        let accountLogic = AccountViewLogic()
+    func testShouldInitializeAccountViewLogic() {
+        let wrapper = ParseWrapperSpy()
+        let accountLogic1 = AccountViewLogic(wrapper: wrapper)
+        let accountLogic2 = AccountViewLogic()
         
-        XCTAssertNotNil(accountLogic)
+        XCTAssertNotNil(accountLogic1.parseWrapper)
+        XCTAssertNotNil(accountLogic2.parseWrapper)
+        XCTAssertTrue(accountLogic1.parseWrapper is ParseWrapperSpy)
     }
     
     func testShouldCallSaveObjectOnParseWrapperOnCreate() {
@@ -26,56 +30,38 @@ class AccountViewLogicTests: XCTestCase {
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
         
-        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123")
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123", completionHandler: nil)
         
-        XCTAssertTrue(parseSpy.spy_saved)
+        XCTAssertTrue(parseSpy.spy_userSignedUp)
+        XCTAssertTrue(parseSpy.spy_validatedUsername)
+        XCTAssertFalse(viewCtrlSpy.spy_presentedViewController)
     }
     
-    func testShouldDisplayErrorAlertOnCreate() {
+    func testShouldDisplayErrorAlertOnCreateWithIncorrectPasswords() {
         let parseSpy = ParseWrapperSpy()
         let viewCtrlSpy = ViewControllerSpy()
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
         
-        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "different123")
-        
-        XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "different123") { _ in
+            XCTAssertFalse(parseSpy.spy_userSignedUp)
+            XCTAssertFalse(parseSpy.spy_validatedUsername)
+            XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
+        }
     }
     
-    // MARK: - White Box Tests
-    
-    func testShouldCallParseWrapperSaveObjectOnCreateAccount() {
+    func testShouldDisplayErrorAlertOnCreateWithTakenUsername() {
         let parseSpy = ParseWrapperSpy()
+        let viewCtrlSpy = ViewControllerSpy()
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
-        let username = "edowney"
-        let password = "password123"
-        let confirmPass = "password123"
-        let firstName = "eric"
-        let lastName = "downey"
-        let email = "edowney@icct.com"
-        let phoneNum = "6147740435"
+        let accountToBeCreated = GuildAccount(username: "", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
+        parseSpy.spy_shouldValidateUsername = false
         
-        let success = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
-        
-        XCTAssertTrue(success)
-        XCTAssertTrue(parseSpy.spy_saved)
-    }
-    
-    func testShouldGetFalseForCreateAccountWhenPasswordsDoNotMatch() {
-        let parseSpy = ParseWrapperSpy()
-        let accountLogic = AccountViewLogic(wrapper: parseSpy)
-        let username = "edowney"
-        let password = "password123"
-        let confirmPass = "different123"
-        let firstName = "eric"
-        let lastName = "downey"
-        let email = "edowney@icct.com"
-        let phoneNum = "6147740435"
-        
-        let success = accountLogic.createAccountWithUsername(username, andConfirmedPassword: (password, confirmPass), forUserWithName: (firstName, lastName), email: email, andPhoneNumber: phoneNum)
-        
-        XCTAssertFalse(success)
-        XCTAssertFalse(parseSpy.spy_saved)
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123") { _ in
+            XCTAssertFalse(parseSpy.spy_userSignedUp)
+            XCTAssertTrue(parseSpy.spy_validatedUsername)
+            XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
+        }
     }
     
     func testShouldDisplayAlertViewGivenValidViewController() {

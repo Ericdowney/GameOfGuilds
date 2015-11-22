@@ -22,33 +22,28 @@ public class AccountViewLogic: ViewLogic {
         super.init()
     }
     
-    public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String) {
-        let success = self.createAccountWithUsername(account.username, andConfirmedPassword: (account.password, confirmPassword), forUserWithName: account.name, email: account.email, andPhoneNumber: account.phoneNumber)
+    public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
         
-        if !success {
-            self.showErrorAlertViewOn(viewCtrl, withTitle: "Error Creating Account", andSubTitle: "Your passwords must match.")
+        if account.password != confirmPassword || account.password == "" {
+            self.showErrorAlertViewOn(viewCtrl, withTitle: "Password Error", andSubTitle: "The passwords are invalid")
+            completionHandler?(false);
+            return;
         }
-    }
-    
-    func createAccountWithUsername(username: String, andConfirmedPassword pass: (String, String), forUserWithName name: (String, String), email: String, andPhoneNumber phone: String) -> Bool {
-        if pass.0 != pass.1 {
-            return false;
+        self.parseWrapper.validUsername(account.username) { valid in
+            if valid {
+                self.parseWrapper.signupUser(account.getDictionaryRepresentation()) { success in
+                    completionHandler?(success)
+                }
+                return;
+            }
+            self.showErrorAlertViewOn(viewCtrl, withTitle: "Username Error", andSubTitle: "Your username is already taken.")
+            completionHandler?(false)
         }
-        
-        self.parseWrapper.saveObject("User", dictionary: [
-            "username": username,
-            "password": pass.0,
-            "firstName": name.0,
-            "lastName": name.1,
-            "email": email,
-            "phoneNumber": phone
-        ])
-        return true;
     }
     
     func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertControllerStyle.Alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
         alert.addAction(cancel)
         
         viewCtrl.presentViewController(alert, animated: true, completion: nil)

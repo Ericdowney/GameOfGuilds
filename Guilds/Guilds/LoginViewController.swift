@@ -21,10 +21,6 @@ public class LoginViewController: UIViewController, ViewLogicContainer {
         self.viewLogic = AccountViewLogic()
     }
     
-    override public func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     // MARK: - Segue
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

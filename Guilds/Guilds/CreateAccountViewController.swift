@@ -28,16 +28,18 @@ public class CreateAccountViewController: UIViewController, ViewLogicContainer {
         self.viewLogic = AccountViewLogic()
     }
     
-    override public func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     // MARK: - Actions
     
     @IBAction public func create(sender: AnyObject) {
         let accountLogic = self.viewLogic as? AccountViewLogic
         let account = GuildAccount(username: self.username.text!, password: self.password.text!, name: (self.firstName.text!,self.lastName.text!), email: self.email.text!, phoneNumber: self.phoneNum.text!)
         
-        accountLogic?.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!)
+        accountLogic!.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!) { success in
+            if success {
+                self.navigationController?.popToRootViewControllerAnimated(true)
+                return;
+            }
+            accountLogic!.showErrorAlertViewOn(self, withTitle: "Unknown Error", andSubTitle: "Some Unknown Error has occurred.")
+        }
     }
 }

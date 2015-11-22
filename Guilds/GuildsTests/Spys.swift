@@ -12,8 +12,9 @@ import Parse
 
 public class AccountViewLogicSpy: AccountViewLogic {
     var spy_createdAccount = false
-    public override func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String) {
+    public override func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
         self.spy_createdAccount = true
+        completionHandler?(true)
     }
 }
 
@@ -21,13 +22,33 @@ public class ViewControllerSpy: UIViewController {
     var spy_presentedViewController = false
     public override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
         self.spy_presentedViewController = true
+        completion?()
     }
 }
 
 public class ParseWrapperSpy: ParseWrapper {
     var spy_saved = false
-    public override func saveObject(className: String, dictionary: [String : AnyObject]) -> BFTask {
+    public override func saveObject(className: String, dictionary: [String : AnyObject], completionHandler: (Bool -> Void)?) {
         self.spy_saved = true
-        return BFTask();
+        completionHandler?(true)
+    }
+    
+    var spy_userSaved = false
+    public override func saveUser(dictionary: [String : AnyObject], completionHandler: (Bool -> Void)?) {
+        self.spy_userSaved = true
+        completionHandler?(true)
+    }
+    
+    var spy_userSignedUp = false
+    public override func signupUser(dictionary: [String : AnyObject], completionHandler: (Bool -> Void)?) {
+        self.spy_userSignedUp = true
+        completionHandler?(true)
+    }
+    
+    var spy_validatedUsername = false
+    var spy_shouldValidateUsername = true
+    public override func validUsername(username: String, completionHandler: (Bool -> Void)?) {
+        self.spy_validatedUsername = true
+        completionHandler?(self.spy_shouldValidateUsername)
     }
 }
