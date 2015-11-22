@@ -11,6 +11,8 @@ import Parse
 
 public class ParseWrapper: NSObject {
     
+    var authenticatedUser: PFUser?
+    
     public func saveObject(className: String, dictionary: [String: AnyObject], completionHandler: (Bool -> Void)?) {
         let obj = PFObject(className: className)
         for (key, value) in dictionary {
@@ -41,6 +43,13 @@ public class ParseWrapper: NSObject {
         
         user.signUpInBackgroundWithBlock { success, err in
             completionHandler?(success)
+        }
+    }
+    
+    public func login(username: String, password: String, completionHandler: (Bool -> Void)?) {
+        PFUser.logInWithUsernameInBackground(username, password: password) { user, err in
+            self.authenticatedUser = user
+            completionHandler?(true)
         }
     }
     

@@ -22,6 +22,8 @@ public class AccountViewLogic: ViewLogic {
         super.init()
     }
     
+    // MARK: - Account Creation
+    
     public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
         
         if account.password != confirmPassword || account.password == "" {
@@ -30,18 +32,30 @@ public class AccountViewLogic: ViewLogic {
             return;
         }
         self.parseWrapper.validUsername(account.username) { valid in
-            if valid {
-                self.parseWrapper.signupUser(account.getDictionaryRepresentation()) { success in
-                    completionHandler?(success)
-                }
-                return;
-            }
-            self.showErrorAlertViewOn(viewCtrl, withTitle: "Username Error", andSubTitle: "Your username is already taken.")
-            completionHandler?(false)
+            self.validateUserNameCallback(valid, withAccount: account, andViewCtrl: viewCtrl, orignalCompletionHandler: completionHandler)
         }
     }
     
-    func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
+    private func validateUserNameCallback(valid: Bool, withAccount account: GuildAccount, andViewCtrl viewCtrl: UIViewController, orignalCompletionHandler: (Bool -> Void)?) {
+        if valid {
+            self.parseWrapper.signupUser(account.getDictionaryRepresentation()) { success in
+                orignalCompletionHandler?(success)
+            }
+            return;
+        }
+        self.showErrorAlertViewOn(viewCtrl, withTitle: "Username Error", andSubTitle: "Your username is already taken.")
+        orignalCompletionHandler?(false)
+    }
+    
+    // MARK: - Log in
+    
+    public func loginWithUsername(username: String, andPassword pass: String, completionHandler: (Bool -> Void)?) {
+        self.parseWrapper.login(username, password: pass, completionHandler: completionHandler)
+    }
+    
+    // MARK: - View
+    
+    public func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertControllerStyle.Alert)
         let cancel = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
         alert.addAction(cancel)
@@ -49,5 +63,12 @@ public class AccountViewLogic: ViewLogic {
         viewCtrl.presentViewController(alert, animated: true, completion: nil)
         
         return alert;
+    }
+    
+    public func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController) {
+        let storyboard = UIStoryboard(name: name, bundle: NSBundle.mainBundle())
+        if let nextViewCtrl = storyboard.instantiateInitialViewController() {
+            viewCtrl.navigationController?.pushViewController(nextViewCtrl, animated: true)
+        }
     }
 }

@@ -37,9 +37,7 @@ public class CreateAccountViewController: UIViewController, ViewLogicContainer {
         accountLogic!.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!) { success in
             if success {
                 self.navigationController?.popToRootViewControllerAnimated(true)
-                return;
             }
-            accountLogic!.showErrorAlertViewOn(self, withTitle: "Unknown Error", andSubTitle: "Some Unknown Error has occurred.")
         }
     }
 }

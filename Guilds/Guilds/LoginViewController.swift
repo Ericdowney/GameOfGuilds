@@ -21,16 +21,16 @@ public class LoginViewController: UIViewController, ViewLogicContainer {
         self.viewLogic = AccountViewLogic()
     }
     
-    // MARK: - Segue
-    
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-    }
-    
     // MARK: - Actions
     
-    
     @IBAction public func login(sender: AnyObject) {
-        
+        let accountLogic = self.viewLogic as? AccountViewLogic
+        accountLogic?.loginWithUsername(self.username.text!, andPassword: self.password.text!) { success in
+            if success {
+                accountLogic?.showStoryboardWithName("Main", onViewController: self)
+                return;
+            }
+            accountLogic?.showErrorAlertViewOn(self, withTitle: "Login Error", andSubTitle: "Your username or password is incorrect.")
+        }
     }
 }
