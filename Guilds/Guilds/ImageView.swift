@@ -31,6 +31,7 @@ public class ImageView: UIImageView {
     }
     
     override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         self.setup()
     }
     

@@ -37,6 +37,7 @@ public class Button: UIButton {
     }
     
     override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         self.setup()
     }
     

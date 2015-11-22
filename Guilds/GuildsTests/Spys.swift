@@ -12,14 +12,15 @@ import Parse
 
 public class AccountViewLogicSpy: AccountViewLogic {
     var spy_createdAccount = false
-    public override func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
+    public override func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmation: (String, String), completionHandler: (Bool -> Void)?) {
         self.spy_createdAccount = true
         completionHandler?(true)
     }
     
     var spy_showStorboard = false
-    public override func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController) {
+    public override func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController, completionHandler: (Void -> Void)?) {
         self.spy_showStorboard = true
+        completionHandler?()
     }
 }
 

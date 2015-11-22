@@ -30,6 +30,7 @@ public class Label: UILabel {
     }
     
     override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         self.setup()
     }
     

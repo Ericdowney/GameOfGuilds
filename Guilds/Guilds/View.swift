@@ -37,6 +37,7 @@ public class View: UIView {
     }
     
     override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         self.setup()
     }
     

@@ -21,11 +21,16 @@ public class AccountViewLogic: ViewLogic {
     
     // MARK: - Account Creation
     
-    public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
+    public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmation: (String, String), completionHandler: (Bool -> Void)?) {
         
-        if account.password != confirmPassword || account.password == "" {
-            self.showErrorAlertViewOn(viewCtrl, withTitle: "Password Error", andSubTitle: "The passwords are invalid")
-            completionHandler?(false);
+        if account.password != confirmation.0 || account.password == "" {
+            self.showErrorAlertViewOn(viewCtrl, withTitle: "Password Error", andSubTitle: "The passwords are invalid.")
+            completionHandler?(false)
+            return;
+        }
+        if account.email != confirmation.1 || account.email == "" {
+            self.showErrorAlertViewOn(viewCtrl, withTitle: "Email Error", andSubTitle: "The emails are invalid.")
+            completionHandler?(false)
             return;
         }
         self.parseWrapper.validUsername(account.username) { valid in

@@ -36,7 +36,7 @@ public class CreateAccountViewController: UIViewController {
     @IBAction public func create(sender: AnyObject) {
         let account = GuildAccount(username: self.username.text!, password: self.password.text!, name: (self.firstName.text!,self.lastName.text!), email: self.email.text!, phoneNumber: self.phoneNum.text!)
         
-        self.accountLogic?.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!) { success in
+        self.accountLogic?.createAccount(self, account: account, confirmation: (self.confirmPassword.text!, self.confirmEmail.text!)) { success in
             if success {
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }

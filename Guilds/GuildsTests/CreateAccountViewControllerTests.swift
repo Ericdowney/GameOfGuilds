@@ -33,6 +33,7 @@ class CreateAccountViewControllerTests: XCTestCase {
         caViewCtrl.firstName = UITextField()
         caViewCtrl.lastName = UITextField()
         caViewCtrl.email = UITextField()
+        caViewCtrl.confirmEmail = UITextField()
         caViewCtrl.phoneNum = UITextField()
         
         caViewCtrl.create(NSObject())

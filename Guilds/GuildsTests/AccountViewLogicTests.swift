@@ -28,7 +28,7 @@ class AccountViewLogicTests: XCTestCase {
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
         
-        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123", completionHandler: nil)
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmation: ("password123", "email"), completionHandler: nil)
         
         XCTAssertTrue(parseSpy.spy_userSignedUp)
         XCTAssertTrue(parseSpy.spy_validatedUsername)
@@ -42,7 +42,25 @@ class AccountViewLogicTests: XCTestCase {
         let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
         let expectation = expectationWithDescription("")
         
-        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "different123") { _ in
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmation: ("different123", "email")) { _ in
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(1.0) { err in
+            XCTAssertFalse(parseSpy.spy_userSignedUp)
+            XCTAssertFalse(parseSpy.spy_validatedUsername)
+            XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
+        }
+    }
+    
+    func testShouldDisplayErrorAlertOnCreateWithIncorrectEmails() {
+        let parseSpy = ParseWrapperSpy()
+        let viewCtrlSpy = ViewControllerSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let accountToBeCreated = GuildAccount(username: "edowney", password: "password123", name: ("eric","downey"), email: "email", phoneNumber: "1234567890")
+        let expectation = expectationWithDescription("")
+        
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmation: ("password123", "another_email")) { _ in
             expectation.fulfill()
         }
         
@@ -61,7 +79,7 @@ class AccountViewLogicTests: XCTestCase {
         let expectation = expectationWithDescription("")
         parseSpy.spy_shouldValidateUsername = false
         
-        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmPassword: "password123") { _ in
+        accountLogic.createAccount(viewCtrlSpy, account: accountToBeCreated, confirmation: ("password123", "email")) { _ in
             expectation.fulfill()
         }
         
