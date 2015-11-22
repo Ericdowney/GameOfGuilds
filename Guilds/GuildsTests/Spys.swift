@@ -16,6 +16,12 @@ public class AccountViewLogicSpy: AccountViewLogic {
         self.spy_createdAccount = true
         completionHandler?(true)
     }
+    
+    var spy_showStorboard = false
+    public override func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController, completionHandler: (Void -> Void)?) {
+        self.spy_showStorboard = true
+        completionHandler?()
+    }
 }
 
 public class ViewControllerSpy: UIViewController {
@@ -53,9 +59,10 @@ public class ParseWrapperSpy: ParseWrapper {
     }
     
     var spy_loggedIn = false
+    var spy_shouldLogin = true
     public override func login(username: String, password: String, completionHandler: (Bool -> Void)?) {
         self.spy_loggedIn = true
-        completionHandler?(true)
+        completionHandler?(self.spy_shouldLogin)
     }
     
     public func getMockUser() -> PFUser {

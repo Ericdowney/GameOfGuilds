@@ -18,4 +18,58 @@ class ProfileViewControllerTests: XCTestCase {
         
         XCTAssertNotNil(profileViewCtrl.accountLogic)
     }
+    
+    func testShouldSetProfileDataOnView() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
+        let _ = profileViewCtrl.view
+        
+        parseSpy.authenticatedUser = parseSpy.getMockUser()
+        profileViewCtrl.accountLogic = accountLogic
+        
+        // Action
+        profileViewCtrl.viewDidAppear(true)
+        
+        XCTAssertEqual(profileViewCtrl.profileName.text, "firstName lastName")
+        XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "Some Title")
+        XCTAssertEqual(profileViewCtrl.profileClient.text, "Some Client")
+    }
+    
+    func testShouldNotSetAnyProfileDataWhenNoAuthenticatedUserIsFound() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
+        let _ = profileViewCtrl.view
+        
+//        Missing
+//        parseSpy.authenticatedUser = parseSpy.getMockUser()
+        profileViewCtrl.accountLogic = accountLogic
+        
+        // Action
+        profileViewCtrl.viewDidAppear(true)
+        
+        XCTAssertEqual(profileViewCtrl.profileName.text, "")
+        XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "")
+        XCTAssertEqual(profileViewCtrl.profileClient.text, "")
+    }
+    
+    func testShouldNotSetAnyProfileDataWhenAccountViewLogicReturnsNilOrIsNil() {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
+        let _ = profileViewCtrl.view
+        
+//        Missing
+//        parseSpy.authenticatedUser = parseSpy.getMockUser()
+        profileViewCtrl.accountLogic = nil
+        
+        // Action
+        profileViewCtrl.viewDidAppear(true)
+        
+        XCTAssertEqual(profileViewCtrl.profileName.text, "")
+        XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "")
+        XCTAssertEqual(profileViewCtrl.profileClient.text, "")
+    }
 }

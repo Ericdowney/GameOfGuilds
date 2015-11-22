@@ -49,7 +49,7 @@ public class ParseWrapper: NSObject {
     public func login(username: String, password: String, completionHandler: (Bool -> Void)?) {
         PFUser.logInWithUsernameInBackground(username, password: password) { user, err in
             self.authenticatedUser = user
-            completionHandler?(true)
+            completionHandler?( user != nil )
         }
     }
     

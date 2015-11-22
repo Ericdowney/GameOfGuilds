@@ -25,7 +25,9 @@ public class CreateAccountViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.accountLogic = AccountViewLogic()
+        if self.accountLogic == nil {
+            self.accountLogic = AccountViewLogic()
+        }
     }
     
     // MARK: - Actions

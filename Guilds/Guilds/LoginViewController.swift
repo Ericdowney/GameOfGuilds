@@ -18,7 +18,9 @@ public class LoginViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.accountLogic = AccountViewLogic()
+        if self.accountLogic == nil {
+            self.accountLogic = AccountViewLogic()
+        }
     }
     
     // MARK: - Actions
@@ -26,10 +28,18 @@ public class LoginViewController: UIViewController {
     @IBAction public func login(sender: AnyObject) {
         self.accountLogic?.loginWithUsername(self.username.text!, andPassword: self.password.text!) { success in
             if success {
-                self.accountLogic?.showStoryboardWithName("Main", onViewController: self)
+                self.setAccountLogicOnProfileViewCtrl()
                 return;
             }
             self.accountLogic?.showErrorAlertViewOn(self, withTitle: "Login Error", andSubTitle: "Your username or password is incorrect.")
+        }
+    }
+    
+    private func setAccountLogicOnProfileViewCtrl() {
+        self.accountLogic?.showStoryboardWithName("Main", onViewController: self) {
+            if let profileViewCtrl = (self.navigationController?.viewControllers[1] as? UITabBarController)?.viewControllers?[0] as? ProfileViewController {
+                profileViewCtrl.accountLogic = self.accountLogic
+            }
         }
     }
 }

@@ -28,6 +28,8 @@
 		89A8C5681C0139480017C319 /* ParseWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5671C0139480017C319 /* ParseWrapperTests.swift */; };
 		89A8C56B1C01636C0017C319 /* ViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */; };
 		89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */; };
+		89A8C5701C0171FB0017C319 /* GuildExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */; };
+		89A8C5721C0176A80017C319 /* GuildExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		89A8C5671C0139480017C319 /* ParseWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseWrapperTests.swift; sourceTree = "<group>"; };
 		89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogicTests.swift; sourceTree = "<group>"; };
 		89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildExtensions.swift; sourceTree = "<group>"; };
+		89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildExtensionTests.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,14 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		89A8C56E1C0171E70017C319 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		89B5DDF91BE2C00300DD06C5 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +244,7 @@
 			children = (
 				89A8C5411C0112070017C319 /* Base */,
 				89A8C5441C0115480017C319 /* Structs */,
+				89A8C56E1C0171E70017C319 /* Extensions */,
 				89A8C53E1C0111B50017C319 /* Protocols */,
 				89A8C5391BFE122D0017C319 /* Parse */,
 				89A8C5301BFB65800017C319 /* Designables */,
@@ -253,6 +266,7 @@
 				89A8C5671C0139480017C319 /* ParseWrapperTests.swift */,
 				89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */,
 				89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */,
+				89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */,
 				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
 				89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */,
 				89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */,
@@ -421,6 +435,7 @@
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
 				89A8C52E1BFB657B0017C319 /* Label.swift in Sources */,
 				89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */,
+				89A8C5701C0171FB0017C319 /* GuildExtensions.swift in Sources */,
 				89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */,
 				89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */,
 				89A8C5321BFCC0350017C319 /* CreateAccountViewController.swift in Sources */,
@@ -437,6 +452,7 @@
 				89A8C54C1C011BCA0017C319 /* LoginViewControllerTests.swift in Sources */,
 				89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */,
 				89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */,
+				89A8C5721C0176A80017C319 /* GuildExtensionTests.swift in Sources */,
 				89A8C5681C0139480017C319 /* ParseWrapperTests.swift in Sources */,
 				89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */,
 				89A8C5661C0136A30017C319 /* Spys.swift in Sources */,
