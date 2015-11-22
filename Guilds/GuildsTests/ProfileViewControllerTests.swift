@@ -12,29 +12,22 @@ import XCTest
 
 class ProfileViewControllerTests: XCTestCase {
 
-    func testShouldCreateAProfileViewController() {
-        let profileViewCtrl = ProfileViewController()
-        let _ = profileViewCtrl.view
-        
-        XCTAssertNotNil(profileViewCtrl.accountLogic)
-    }
-    
-    func testShouldSetProfileDataOnView() {
+    func testShouldConfigureAProfileViewController() {
         let parseSpy = ParseWrapperSpy()
-        let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
-        let _ = profileViewCtrl.view
         
         parseSpy.authenticatedUser = parseSpy.getMockUser()
-        profileViewCtrl.accountLogic = accountLogic
+        (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper = parseSpy
         
         // Action
-        profileViewCtrl.viewDidAppear(true)
+        let _ = profileViewCtrl.view
         
         XCTAssertEqual(profileViewCtrl.profileName.text, "firstName lastName")
         XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "Some Title")
         XCTAssertEqual(profileViewCtrl.profileClient.text, "Some Client")
+        
+        (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper = ParseWrapper()
     }
     
     func testShouldNotSetAnyProfileDataWhenNoAuthenticatedUserIsFound() {
@@ -42,14 +35,13 @@ class ProfileViewControllerTests: XCTestCase {
         let accountLogic = AccountViewLogic(wrapper: parseSpy)
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
-        let _ = profileViewCtrl.view
         
 //        Missing
 //        parseSpy.authenticatedUser = parseSpy.getMockUser()
         profileViewCtrl.accountLogic = accountLogic
         
         // Action
-        profileViewCtrl.viewDidAppear(true)
+        let _ = profileViewCtrl.view
         
         XCTAssertEqual(profileViewCtrl.profileName.text, "")
         XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "")
@@ -59,14 +51,13 @@ class ProfileViewControllerTests: XCTestCase {
     func testShouldNotSetAnyProfileDataWhenAccountViewLogicReturnsNilOrIsNil() {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
-        let _ = profileViewCtrl.view
         
 //        Missing
 //        parseSpy.authenticatedUser = parseSpy.getMockUser()
         profileViewCtrl.accountLogic = nil
         
         // Action
-        profileViewCtrl.viewDidAppear(true)
+        let _ = profileViewCtrl.view
         
         XCTAssertEqual(profileViewCtrl.profileName.text, "")
         XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "")

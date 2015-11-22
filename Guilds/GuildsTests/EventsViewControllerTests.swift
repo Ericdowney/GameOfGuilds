@@ -12,7 +12,7 @@ import XCTest
 
 class EventsViewControllerTests: XCTestCase {
 
-    func testShouldCreateAProfileViewController() {
+    func testShouldConfigureAEventsViewController() {
         let eventsViewCtrl = EventsViewController()
         let _ = eventsViewCtrl.view
         

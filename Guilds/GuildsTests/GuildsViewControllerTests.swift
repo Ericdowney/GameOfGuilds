@@ -12,8 +12,10 @@ import XCTest
 
 class GuildsViewControllerTests: XCTestCase {
 
-    func testShouldCreateAProfileViewController() {
+    func testShouldConfigureAGuildsViewController() {
         let guildsViewCtrl = GuildsViewController()
+        let navCtrl = UINavigationController(rootViewController: guildsViewCtrl)
+        let _ = navCtrl.view
         let _ = guildsViewCtrl.view
         
         XCTAssertNotNil(guildsViewCtrl.guildLogic)

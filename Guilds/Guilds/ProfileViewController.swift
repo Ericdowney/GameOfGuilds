@@ -11,6 +11,7 @@ import UIKit
 public class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var accountLogic: AccountViewLogic?
+    var guildsLogic: GuildsViewLogic?
 
     @IBOutlet weak var imageView: ImageView!
     
@@ -21,16 +22,13 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if self.accountLogic == nil {
+        if self.accountLogic == nil || self.guildsLogic == nil {
             let wrapper = (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper
             self.accountLogic = AccountViewLogic(wrapper: wrapper)
+            self.guildsLogic = GuildsViewLogic(wrapper: wrapper)
         }
-    }
-    
-    override public func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
-        guard let data = self.accountLogic?.getAccountData() else { return; }
+        let data = self.accountLogic!.getAccountData()
         if !data.isAuthenticated { return; }
         
         self.profileName.text = "\(data.firstName!) \(data.lastName!)"

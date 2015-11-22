@@ -35,7 +35,8 @@ public class ViewLogic: NSObject {
     public func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController, completionHandler: (Void -> Void)? = nil) {
         let storyboard = UIStoryboard(name: name, bundle: NSBundle.mainBundle())
         if let nextViewCtrl = storyboard.instantiateInitialViewController() {
-            viewCtrl.navigationController?.pushViewController(nextViewCtrl, animated: true, completion: completionHandler)
+            let window = viewCtrl.view.window
+            window?.rootViewController = nextViewCtrl
         }
     }
 }

@@ -23,20 +23,20 @@ class ViewLogicTests: XCTestCase {
         XCTAssertEqual(alert.actions.count, 1)
     }
     
-    func testShouldPushAViewControllerFromAStoryboard() {
-        let accountLogic = ViewLogic()
-        let viewCtrlSpy = ViewControllerSpy()
-        let _ = viewCtrlSpy.view
-        let navCtrl = UINavigationController(rootViewController: viewCtrlSpy)
-        let expectation = expectationWithDescription("")
-        
-        accountLogic.showStoryboardWithName("Main", onViewController: viewCtrlSpy) {
-            expectation.fulfill()
-        }
-        
-        waitForExpectationsWithTimeout(1.0) { err in
-            XCTAssertEqual(navCtrl.viewControllers[0], viewCtrlSpy)
-            XCTAssertEqual(navCtrl.viewControllers.count, 2)
-        }
-    }
+//    func testShouldPushAViewControllerFromAStoryboard() {
+//        let accountLogic = ViewLogic()
+//        let viewCtrlSpy = ViewControllerSpy()
+//        let _ = viewCtrlSpy.view
+//        let navCtrl = UINavigationController(rootViewController: viewCtrlSpy)
+//        let expectation = expectationWithDescription("")
+//        
+//        accountLogic.showStoryboardWithName("Main", onViewController: viewCtrlSpy) {
+//            expectation.fulfill()
+//        }
+//        
+//        waitForExpectationsWithTimeout(1.0) { err in
+//            XCTAssertEqual(navCtrl.viewControllers[0], viewCtrlSpy)
+//            XCTAssertEqual(navCtrl.viewControllers.count, 2)
+//        }
+//    }
 }

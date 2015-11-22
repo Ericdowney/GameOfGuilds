@@ -12,7 +12,7 @@ import XCTest
 
 class SearchViewControllerTests: XCTestCase {
 
-    func testShouldCreateAProfileViewController() {
+    func testShouldConfigureASearchViewController() {
         let searchViewCtrl = SearchViewController()
         let _ = searchViewCtrl.view
         

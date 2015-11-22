@@ -9,5 +9,6 @@
 import UIKit
 
 public class GuildsViewLogic: ViewLogic {
+
     
 }
