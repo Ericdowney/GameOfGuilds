@@ -18,9 +18,8 @@ public class AccountViewLogicSpy: AccountViewLogic {
     }
     
     var spy_showStorboard = false
-    public override func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController, completionHandler: (Void -> Void)?) {
+    public override func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController) {
         self.spy_showStorboard = true
-        completionHandler?()
     }
 }
 

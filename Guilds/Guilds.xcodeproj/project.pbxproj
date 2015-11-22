@@ -30,6 +30,18 @@
 		89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */; };
 		89A8C5701C0171FB0017C319 /* GuildExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */; };
 		89A8C5721C0176A80017C319 /* GuildExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */; };
+		89A8C5741C0182300017C319 /* GuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5731C0182300017C319 /* GuildsViewController.swift */; };
+		89A8C5761C0182AB0017C319 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5751C0182AB0017C319 /* SearchViewController.swift */; };
+		89A8C5781C0182DE0017C319 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5771C0182DE0017C319 /* EventsViewController.swift */; };
+		89A8C57B1C0184830017C319 /* GuildsViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C57A1C0184830017C319 /* GuildsViewLogic.swift */; };
+		89A8C57D1C0184CD0017C319 /* EventsViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C57C1C0184CD0017C319 /* EventsViewLogic.swift */; };
+		89A8C5811C01851E0017C319 /* GuildsViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5801C01851E0017C319 /* GuildsViewLogicTests.swift */; };
+		89A8C5831C0185280017C319 /* EventsViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5821C0185280017C319 /* EventsViewLogicTests.swift */; };
+		89A8C5851C01854A0017C319 /* GuildsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5841C01854A0017C319 /* GuildsViewControllerTests.swift */; };
+		89A8C5871C0185580017C319 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5861C0185580017C319 /* SearchViewControllerTests.swift */; };
+		89A8C5891C0185630017C319 /* EventsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5881C0185630017C319 /* EventsViewControllerTests.swift */; };
+		89A8C58B1C01862C0017C319 /* SearchViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58A1C01862C0017C319 /* SearchViewLogic.swift */; };
+		89A8C58D1C01882C0017C319 /* SearchViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58C1C01882C0017C319 /* SearchViewLogicTests.swift */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
@@ -96,6 +108,18 @@
 		89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildExtensions.swift; sourceTree = "<group>"; };
 		89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildExtensionTests.swift; sourceTree = "<group>"; };
+		89A8C5731C0182300017C319 /* GuildsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsViewController.swift; sourceTree = "<group>"; };
+		89A8C5751C0182AB0017C319 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		89A8C5771C0182DE0017C319 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		89A8C57A1C0184830017C319 /* GuildsViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsViewLogic.swift; sourceTree = "<group>"; };
+		89A8C57C1C0184CD0017C319 /* EventsViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewLogic.swift; sourceTree = "<group>"; };
+		89A8C5801C01851E0017C319 /* GuildsViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsViewLogicTests.swift; sourceTree = "<group>"; };
+		89A8C5821C0185280017C319 /* EventsViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewLogicTests.swift; sourceTree = "<group>"; };
+		89A8C5841C01854A0017C319 /* GuildsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildsViewControllerTests.swift; sourceTree = "<group>"; };
+		89A8C5861C0185580017C319 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		89A8C5881C0185630017C319 /* EventsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewControllerTests.swift; sourceTree = "<group>"; };
+		89A8C58A1C01862C0017C319 /* SearchViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewLogic.swift; sourceTree = "<group>"; };
+		89A8C58C1C01882C0017C319 /* SearchViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewLogicTests.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +178,6 @@
 		89A8C5331BFCC03A0017C319 /* Account Login/Registration */ = {
 			isa = PBXGroup;
 			children = (
-				89A8C5341BFCD8F20017C319 /* AccountViewLogic.swift */,
 				89A8C5241BFB64CE0017C319 /* LoginViewController.swift */,
 				89A8C5311BFCC0350017C319 /* CreateAccountViewController.swift */,
 			);
@@ -205,6 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */,
+				89A8C5731C0182300017C319 /* GuildsViewController.swift */,
+				89A8C5751C0182AB0017C319 /* SearchViewController.swift */,
+				89A8C5771C0182DE0017C319 /* EventsViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -215,6 +241,42 @@
 				89A8C56F1C0171FB0017C319 /* GuildExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		89A8C5791C0184600017C319 /* View Logic */ = {
+			isa = PBXGroup;
+			children = (
+				89A8C5341BFCD8F20017C319 /* AccountViewLogic.swift */,
+				89A8C57A1C0184830017C319 /* GuildsViewLogic.swift */,
+				89A8C58A1C01862C0017C319 /* SearchViewLogic.swift */,
+				89A8C57C1C0184CD0017C319 /* EventsViewLogic.swift */,
+			);
+			name = "View Logic";
+			sourceTree = "<group>";
+		};
+		89A8C57E1C0184E30017C319 /* View Logic Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */,
+				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
+				89A8C5801C01851E0017C319 /* GuildsViewLogicTests.swift */,
+				89A8C5821C0185280017C319 /* EventsViewLogicTests.swift */,
+				89A8C58C1C01882C0017C319 /* SearchViewLogicTests.swift */,
+			);
+			name = "View Logic Tests";
+			sourceTree = "<group>";
+		};
+		89A8C57F1C0184EF0017C319 /* View Controller Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */,
+				89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */,
+				89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */,
+				89A8C5841C01854A0017C319 /* GuildsViewControllerTests.swift */,
+				89A8C5861C0185580017C319 /* SearchViewControllerTests.swift */,
+				89A8C5881C0185630017C319 /* EventsViewControllerTests.swift */,
+			);
+			name = "View Controller Tests";
 			sourceTree = "<group>";
 		};
 		89B5DDF91BE2C00300DD06C5 = {
@@ -242,13 +304,14 @@
 		89B5DE041BE2C00300DD06C5 /* Guilds */ = {
 			isa = PBXGroup;
 			children = (
+				89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */,
 				89A8C5411C0112070017C319 /* Base */,
 				89A8C5441C0115480017C319 /* Structs */,
 				89A8C56E1C0171E70017C319 /* Extensions */,
 				89A8C53E1C0111B50017C319 /* Protocols */,
 				89A8C5391BFE122D0017C319 /* Parse */,
 				89A8C5301BFB65800017C319 /* Designables */,
-				89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */,
+				89A8C5791C0184600017C319 /* View Logic */,
 				89A8C5331BFCC03A0017C319 /* Account Login/Registration */,
 				89A8C5691C0162B80017C319 /* Main */,
 				89B5DF121BEC4F1D00DD06C5 /* Storyboards */,
@@ -264,13 +327,10 @@
 			children = (
 				89A8C5641C0136930017C319 /* Spy Objects */,
 				89A8C5671C0139480017C319 /* ParseWrapperTests.swift */,
-				89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */,
 				89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */,
 				89A8C5711C0176A80017C319 /* GuildExtensionTests.swift */,
-				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
-				89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */,
-				89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */,
-				89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */,
+				89A8C57E1C0184E30017C319 /* View Logic Tests */,
+				89A8C57F1C0184EF0017C319 /* View Controller Tests */,
 				89B5DE1C1BE2C00300DD06C5 /* Info.plist */,
 			);
 			path = GuildsTests;
@@ -428,8 +488,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A8C57D1C0184CD0017C319 /* EventsViewLogic.swift in Sources */,
 				89A8C52D1BFB657B0017C319 /* ImageView.swift in Sources */,
 				89A8C5461C01155A0017C319 /* GuildAccount.swift in Sources */,
+				89A8C58B1C01862C0017C319 /* SearchViewLogic.swift in Sources */,
 				89A8C53B1BFE12380017C319 /* ParseWrapper.swift in Sources */,
 				89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */,
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
@@ -438,8 +500,12 @@
 				89A8C5701C0171FB0017C319 /* GuildExtensions.swift in Sources */,
 				89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */,
 				89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */,
+				89A8C5781C0182DE0017C319 /* EventsViewController.swift in Sources */,
+				89A8C57B1C0184830017C319 /* GuildsViewLogic.swift in Sources */,
+				89A8C5761C0182AB0017C319 /* SearchViewController.swift in Sources */,
 				89A8C5321BFCC0350017C319 /* CreateAccountViewController.swift in Sources */,
 				89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */,
+				89A8C5741C0182300017C319 /* GuildsViewController.swift in Sources */,
 				89A8C52F1BFB657B0017C319 /* View.swift in Sources */,
 				89A8C52C1BFB657B0017C319 /* Button.swift in Sources */,
 			);
@@ -449,14 +515,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A8C5851C01854A0017C319 /* GuildsViewControllerTests.swift in Sources */,
 				89A8C54C1C011BCA0017C319 /* LoginViewControllerTests.swift in Sources */,
 				89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */,
 				89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */,
+				89A8C5831C0185280017C319 /* EventsViewLogicTests.swift in Sources */,
+				89A8C5891C0185630017C319 /* EventsViewControllerTests.swift in Sources */,
 				89A8C5721C0176A80017C319 /* GuildExtensionTests.swift in Sources */,
 				89A8C5681C0139480017C319 /* ParseWrapperTests.swift in Sources */,
+				89A8C5811C01851E0017C319 /* GuildsViewLogicTests.swift in Sources */,
 				89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */,
+				89A8C5871C0185580017C319 /* SearchViewControllerTests.swift in Sources */,
 				89A8C5661C0136A30017C319 /* Spys.swift in Sources */,
 				89A8C56B1C01636C0017C319 /* ViewLogicTests.swift in Sources */,
+				89A8C58D1C01882C0017C319 /* SearchViewLogicTests.swift in Sources */,
 				89A8C53D1C010DCC0017C319 /* DesignablesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

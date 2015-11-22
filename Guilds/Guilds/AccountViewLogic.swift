@@ -10,18 +10,6 @@ import UIKit
 
 public class AccountViewLogic: ViewLogic {
     
-    var parseWrapper: ParseWrapper
-    
-    override public init() {
-        self.parseWrapper = ParseWrapper()
-        super.init()
-    }
-    
-    public init(wrapper: ParseWrapper) {
-        self.parseWrapper = wrapper
-        super.init()
-    }
-    
     // MARK: - Account Information
     
     public func getAccountData() -> (isAuthenticated: Bool, username: String?, firstName: String?, lastName: String?) {

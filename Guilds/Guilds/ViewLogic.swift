@@ -9,6 +9,18 @@
 import UIKit
 
 public class ViewLogic: NSObject {
+    
+    var parseWrapper: ParseWrapper
+    
+    override public init() {
+        self.parseWrapper = ParseWrapper()
+        super.init()
+    }
+    
+    public init(wrapper: ParseWrapper) {
+        self.parseWrapper = wrapper
+        super.init()
+    }
 
     public func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertControllerStyle.Alert)
@@ -20,10 +32,10 @@ public class ViewLogic: NSObject {
         return alert;
     }
     
-    public func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController, completionHandler: (Void -> Void)?) {
+    public func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController) {
         let storyboard = UIStoryboard(name: name, bundle: NSBundle.mainBundle())
         if let nextViewCtrl = storyboard.instantiateInitialViewController() {
-            viewCtrl.navigationController?.pushViewController(nextViewCtrl, animated: true, completion: completionHandler)
+            viewCtrl.navigationController?.pushViewController(nextViewCtrl, animated: true)
         }
     }
 }

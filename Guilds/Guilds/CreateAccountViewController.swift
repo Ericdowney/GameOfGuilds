@@ -26,7 +26,8 @@ public class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         if self.accountLogic == nil {
-            self.accountLogic = AccountViewLogic()
+            let wrapper = (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper
+            self.accountLogic = AccountViewLogic(wrapper: wrapper)
         }
     }
     
