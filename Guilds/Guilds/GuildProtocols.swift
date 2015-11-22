@@ -8,6 +8,3 @@
 
 import Foundation
 
-public protocol ViewLogicContainer {
-    var viewLogic: ViewLogic? { get }
-}

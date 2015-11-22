@@ -11,14 +11,11 @@ import XCTest
 @testable import Guilds
 
 class LoginViewControllerTests: XCTestCase {
-    
-    // MARK: - Tests
 
     func testShouldCreateALoginViewController() {
         let loginViewCtrl = LoginViewController()
         let _ = loginViewCtrl.view
         
-        XCTAssertNotNil(loginViewCtrl.viewLogic)
-        XCTAssertTrue(loginViewCtrl.viewLogic is AccountViewLogic)
+        XCTAssertNotNil(loginViewCtrl.accountLogic)
     }
 }

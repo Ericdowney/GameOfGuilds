@@ -12,8 +12,6 @@ import XCTest
 
 class AccountViewLogicTests: XCTestCase {
     
-    // MARK: - Black Box Tests
-    
     func testShouldInitializeAccountViewLogic() {
         let wrapper = ParseWrapperSpy()
         let accountLogic1 = AccountViewLogic(wrapper: wrapper)
@@ -64,13 +62,37 @@ class AccountViewLogicTests: XCTestCase {
         }
     }
     
-    func testShouldDisplayAlertViewGivenValidViewController() {
-        let accountLogic = AccountViewLogic()
-        let viewCtrlSpy = ViewControllerSpy()
+    func testShouldCallParseWrapperLogin() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
         
-        let alert = accountLogic.showErrorAlertViewOn(viewCtrlSpy, withTitle: "Hello", andSubTitle: "how are you?")
+        accountLogic.loginWithUsername("myUsername", andPassword: "password", completionHandler: nil)
         
-        XCTAssertTrue(viewCtrlSpy.spy_presentedViewController)
-        XCTAssertEqual(alert.actions.count, 1)
+        XCTAssertTrue(parseSpy.spy_loggedIn)
+    }
+    
+    func testShouldGetAccountData() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        parseSpy.authenticatedUser = parseSpy.getMockUser()
+        
+        let result = accountLogic.getAccountData()
+        
+        XCTAssertTrue(result.isAuthenticated)
+        XCTAssertEqual(result.username, "username")
+        XCTAssertEqual(result.firstName, "firstName")
+        XCTAssertEqual(result.lastName, "lastName")
+    }
+    
+    func testShouldGetFalseAndNilDataIfUserIsNotLoggedInOnGetAccountData() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        
+        let result = accountLogic.getAccountData()
+        
+        XCTAssertFalse(result.isAuthenticated)
+        XCTAssertNil(result.username)
+        XCTAssertNil(result.firstName)
+        XCTAssertNil(result.lastName)
     }
 }

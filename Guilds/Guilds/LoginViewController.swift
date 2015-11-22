@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class LoginViewController: UIViewController, ViewLogicContainer {
+public class LoginViewController: UIViewController {
     
-    public var viewLogic: ViewLogic?
+    public var accountLogic: AccountViewLogic?
         
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -18,19 +18,18 @@ public class LoginViewController: UIViewController, ViewLogicContainer {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.viewLogic = AccountViewLogic()
+        self.accountLogic = AccountViewLogic()
     }
     
     // MARK: - Actions
     
     @IBAction public func login(sender: AnyObject) {
-        let accountLogic = self.viewLogic as? AccountViewLogic
-        accountLogic?.loginWithUsername(self.username.text!, andPassword: self.password.text!) { success in
+        self.accountLogic?.loginWithUsername(self.username.text!, andPassword: self.password.text!) { success in
             if success {
-                accountLogic?.showStoryboardWithName("Main", onViewController: self)
+                self.accountLogic?.showStoryboardWithName("Main", onViewController: self)
                 return;
             }
-            accountLogic?.showErrorAlertViewOn(self, withTitle: "Login Error", andSubTitle: "Your username or password is incorrect.")
+            self.accountLogic?.showErrorAlertViewOn(self, withTitle: "Login Error", andSubTitle: "Your username or password is incorrect.")
         }
     }
 }

@@ -21,13 +21,15 @@
 		89A8C53D1C010DCC0017C319 /* DesignablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */; };
 		89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C53F1C0111C20017C319 /* GuildProtocols.swift */; };
 		89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5421C01120F0017C319 /* ViewLogic.swift */; };
-		89A8C5461C01155A0017C319 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5451C01155A0017C319 /* Account.swift */; };
+		89A8C5461C01155A0017C319 /* GuildAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5451C01155A0017C319 /* GuildAccount.swift */; };
 		89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */; };
 		89A8C54C1C011BCA0017C319 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */; };
 		89A8C5661C0136A30017C319 /* Spys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5651C0136A30017C319 /* Spys.swift */; };
 		89A8C5681C0139480017C319 /* ParseWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5671C0139480017C319 /* ParseWrapperTests.swift */; };
+		89A8C56B1C01636C0017C319 /* ViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */; };
+		89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
-		89B5DE081BE2C00300DD06C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ViewController.swift */; };
+		89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
 		89B5DE0D1BE2C00300DD06C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE0C1BE2C00300DD06C5 /* Assets.xcassets */; };
 		89B5DE101BE2C00300DD06C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE0E1BE2C00300DD06C5 /* LaunchScreen.storyboard */; };
@@ -83,14 +85,16 @@
 		89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignablesTests.swift; sourceTree = "<group>"; };
 		89A8C53F1C0111C20017C319 /* GuildProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildProtocols.swift; sourceTree = "<group>"; };
 		89A8C5421C01120F0017C319 /* ViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogic.swift; sourceTree = "<group>"; };
-		89A8C5451C01155A0017C319 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		89A8C5451C01155A0017C319 /* GuildAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildAccount.swift; sourceTree = "<group>"; };
 		89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewControllerTests.swift; sourceTree = "<group>"; };
 		89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		89A8C5651C0136A30017C319 /* Spys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spys.swift; sourceTree = "<group>"; };
 		89A8C5671C0139480017C319 /* ParseWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseWrapperTests.swift; sourceTree = "<group>"; };
+		89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLogicTests.swift; sourceTree = "<group>"; };
+		89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89B5DE071BE2C00300DD06C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		89B5DE0A1BE2C00300DD06C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89B5DE0C1BE2C00300DD06C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B5DE0F1BE2C00300DD06C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,7 +184,7 @@
 		89A8C5441C0115480017C319 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				89A8C5451C01155A0017C319 /* Account.swift */,
+				89A8C5451C01155A0017C319 /* GuildAccount.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -191,6 +195,14 @@
 				89A8C5651C0136A30017C319 /* Spys.swift */,
 			);
 			name = "Spy Objects";
+			sourceTree = "<group>";
+		};
+		89A8C5691C0162B80017C319 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		89B5DDF91BE2C00300DD06C5 = {
@@ -224,8 +236,8 @@
 				89A8C5391BFE122D0017C319 /* Parse */,
 				89A8C5301BFB65800017C319 /* Designables */,
 				89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */,
-				89B5DE071BE2C00300DD06C5 /* ViewController.swift */,
 				89A8C5331BFCC03A0017C319 /* Account Login/Registration */,
+				89A8C5691C0162B80017C319 /* Main */,
 				89B5DF121BEC4F1D00DD06C5 /* Storyboards */,
 				89B5DE0C1BE2C00300DD06C5 /* Assets.xcassets */,
 				89B5DE0E1BE2C00300DD06C5 /* LaunchScreen.storyboard */,
@@ -239,10 +251,12 @@
 			children = (
 				89A8C5641C0136930017C319 /* Spy Objects */,
 				89A8C5671C0139480017C319 /* ParseWrapperTests.swift */,
+				89A8C56A1C01636C0017C319 /* ViewLogicTests.swift */,
 				89A8C53C1C010DCC0017C319 /* DesignablesTests.swift */,
 				89A8C5361BFCD9220017C319 /* AccountViewLogicTests.swift */,
 				89A8C5491C011A3E0017C319 /* CreateAccountViewControllerTests.swift */,
 				89A8C54B1C011BCA0017C319 /* LoginViewControllerTests.swift */,
+				89A8C56C1C0165030017C319 /* ProfileViewControllerTests.swift */,
 				89B5DE1C1BE2C00300DD06C5 /* Info.plist */,
 			);
 			path = GuildsTests;
@@ -401,12 +415,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A8C52D1BFB657B0017C319 /* ImageView.swift in Sources */,
-				89A8C5461C01155A0017C319 /* Account.swift in Sources */,
+				89A8C5461C01155A0017C319 /* GuildAccount.swift in Sources */,
 				89A8C53B1BFE12380017C319 /* ParseWrapper.swift in Sources */,
 				89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */,
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
 				89A8C52E1BFB657B0017C319 /* Label.swift in Sources */,
-				89B5DE081BE2C00300DD06C5 /* ViewController.swift in Sources */,
+				89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */,
 				89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */,
 				89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */,
 				89A8C5321BFCC0350017C319 /* CreateAccountViewController.swift in Sources */,
@@ -424,7 +438,9 @@
 				89A8C54A1C011A3E0017C319 /* CreateAccountViewControllerTests.swift in Sources */,
 				89A8C5371BFCD9220017C319 /* AccountViewLogicTests.swift in Sources */,
 				89A8C5681C0139480017C319 /* ParseWrapperTests.swift in Sources */,
+				89A8C56D1C0165030017C319 /* ProfileViewControllerTests.swift in Sources */,
 				89A8C5661C0136A30017C319 /* Spys.swift in Sources */,
+				89A8C56B1C01636C0017C319 /* ViewLogicTests.swift in Sources */,
 				89A8C53D1C010DCC0017C319 /* DesignablesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

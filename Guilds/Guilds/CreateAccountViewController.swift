@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class CreateAccountViewController: UIViewController, ViewLogicContainer {
+public class CreateAccountViewController: UIViewController {
     
-    public var viewLogic: ViewLogic?
+    public var accountLogic: AccountViewLogic?
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -25,16 +25,15 @@ public class CreateAccountViewController: UIViewController, ViewLogicContainer {
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.viewLogic = AccountViewLogic()
+        self.accountLogic = AccountViewLogic()
     }
     
     // MARK: - Actions
     
     @IBAction public func create(sender: AnyObject) {
-        let accountLogic = self.viewLogic as? AccountViewLogic
         let account = GuildAccount(username: self.username.text!, password: self.password.text!, name: (self.firstName.text!,self.lastName.text!), email: self.email.text!, phoneNumber: self.phoneNum.text!)
         
-        accountLogic!.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!) { success in
+        self.accountLogic?.createAccount(self, account: account, confirmPassword: self.confirmPassword.text!) { success in
             if success {
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }

@@ -8,16 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProfileViewController: UIViewController {
+    
+    var accountLogic: AccountViewLogic?
 
     @IBOutlet weak var imageView: ImageView!
+    
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var profileJobTitle: UILabel!
+    @IBOutlet weak var profileClient: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        self.accountLogic = AccountViewLogic()
     }
 }

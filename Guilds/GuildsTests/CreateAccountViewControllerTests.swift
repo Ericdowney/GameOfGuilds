@@ -18,15 +18,14 @@ class CreateAccountViewControllerTests: XCTestCase {
         let caViewCtrl = CreateAccountViewController()
         let _ = caViewCtrl.view
         
-        XCTAssertNotNil(caViewCtrl.viewLogic)
-        XCTAssertTrue(caViewCtrl.viewLogic is AccountViewLogic)
+        XCTAssertNotNil(caViewCtrl.accountLogic)
     }
 
     func testShouldCallCreateAccountOnAccountViewLogic() {
         let accountViewLogicSpy = AccountViewLogicSpy()
         let caViewCtrl = CreateAccountViewController()
         let _ = caViewCtrl.view
-        caViewCtrl.viewLogic = accountViewLogicSpy
+        caViewCtrl.accountLogic = accountViewLogicSpy
         
         caViewCtrl.username = UITextField()
         caViewCtrl.password = UITextField()

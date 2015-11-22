@@ -51,4 +51,18 @@ public class ParseWrapperSpy: ParseWrapper {
         self.spy_validatedUsername = true
         completionHandler?(self.spy_shouldValidateUsername)
     }
+    
+    var spy_loggedIn = false
+    public override func login(username: String, password: String, completionHandler: (Bool -> Void)?) {
+        self.spy_loggedIn = true
+        completionHandler?(true)
+    }
+    
+    public func getMockUser() -> PFUser {
+        let user = PFUser()
+        user["username"] = "username"
+        user["firstName"] = "firstName"
+        user["lastName"] = "lastName"
+        return user;
+    }
 }

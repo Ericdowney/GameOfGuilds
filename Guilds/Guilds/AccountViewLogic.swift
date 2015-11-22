@@ -22,6 +22,15 @@ public class AccountViewLogic: ViewLogic {
         super.init()
     }
     
+    // MARK: - Account Information
+    
+    public func getAccountData() -> (isAuthenticated: Bool, username: String?, firstName: String?, lastName: String?) {
+        if let user = self.parseWrapper.authenticatedUser {
+            return (isAuthenticated: true, username: user["username"] as? String, firstName: user["firstName"] as? String, lastName: user["lastName"] as? String);
+        }
+        return (isAuthenticated: false, username: nil, firstName: nil, lastName: nil);
+    }
+    
     // MARK: - Account Creation
     
     public func createAccount(viewCtrl: UIViewController, account: GuildAccount, confirmPassword: String, completionHandler: (Bool -> Void)?) {
@@ -51,24 +60,5 @@ public class AccountViewLogic: ViewLogic {
     
     public func loginWithUsername(username: String, andPassword pass: String, completionHandler: (Bool -> Void)?) {
         self.parseWrapper.login(username, password: pass, completionHandler: completionHandler)
-    }
-    
-    // MARK: - View
-    
-    public func showErrorAlertViewOn(viewCtrl: UIViewController, withTitle title: String, andSubTitle subTitle: String) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertControllerStyle.Alert)
-        let cancel = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
-        alert.addAction(cancel)
-        
-        viewCtrl.presentViewController(alert, animated: true, completion: nil)
-        
-        return alert;
-    }
-    
-    public func showStoryboardWithName(name: String, onViewController viewCtrl: UIViewController) {
-        let storyboard = UIStoryboard(name: name, bundle: NSBundle.mainBundle())
-        if let nextViewCtrl = storyboard.instantiateInitialViewController() {
-            viewCtrl.navigationController?.pushViewController(nextViewCtrl, animated: true)
-        }
     }
 }
