@@ -36,6 +36,18 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
         self.profileClient.text = "Some Client"
     }
     
+    // MARK: - Actions
+    
+    @IBAction func editProfile(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        self.accountLogic?.logout {
+            self.accountLogic?.showStoryboardWithName("Login", onViewController: self)
+        }
+    }
+    
     // MARK: - Table View
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -53,10 +65,16 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
         
+        if indexPath.section == 0 {
+            cell.accessoryType = .DisclosureIndicator
+        }
+        
         return cell;
     }
     
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0 {
+            self.performSegueWithIdentifier("guildProfilePage", sender: self)
+        }
     }
 }

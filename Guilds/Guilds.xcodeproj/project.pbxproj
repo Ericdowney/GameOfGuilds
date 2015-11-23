@@ -42,6 +42,9 @@
 		89A8C5891C0185630017C319 /* EventsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5881C0185630017C319 /* EventsViewControllerTests.swift */; };
 		89A8C58B1C01862C0017C319 /* SearchViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58A1C01862C0017C319 /* SearchViewLogic.swift */; };
 		89A8C58D1C01882C0017C319 /* SearchViewLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58C1C01882C0017C319 /* SearchViewLogicTests.swift */; };
+		89A8C58F1C0216780017C319 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58E1C0216780017C319 /* Guild.swift */; };
+		89A8C5911C0298F30017C319 /* GuildProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5901C0298F30017C319 /* GuildProfileViewController.swift */; };
+		89A8C5931C029E260017C319 /* AddGuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5921C029E260017C319 /* AddGuildViewController.swift */; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
@@ -120,6 +123,9 @@
 		89A8C5881C0185630017C319 /* EventsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewControllerTests.swift; sourceTree = "<group>"; };
 		89A8C58A1C01862C0017C319 /* SearchViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewLogic.swift; sourceTree = "<group>"; };
 		89A8C58C1C01882C0017C319 /* SearchViewLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewLogicTests.swift; sourceTree = "<group>"; };
+		89A8C58E1C0216780017C319 /* Guild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
+		89A8C5901C0298F30017C319 /* GuildProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildProfileViewController.swift; sourceTree = "<group>"; };
+		89A8C5921C029E260017C319 /* AddGuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuildViewController.swift; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				89A8C5451C01155A0017C319 /* GuildAccount.swift */,
+				89A8C58E1C0216780017C319 /* Guild.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -229,6 +236,8 @@
 			children = (
 				89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */,
 				89A8C5731C0182300017C319 /* GuildsViewController.swift */,
+				89A8C5901C0298F30017C319 /* GuildProfileViewController.swift */,
+				89A8C5921C029E260017C319 /* AddGuildViewController.swift */,
 				89A8C5751C0182AB0017C319 /* SearchViewController.swift */,
 				89A8C5771C0182DE0017C319 /* EventsViewController.swift */,
 			);
@@ -491,17 +500,20 @@
 				89A8C57D1C0184CD0017C319 /* EventsViewLogic.swift in Sources */,
 				89A8C52D1BFB657B0017C319 /* ImageView.swift in Sources */,
 				89A8C5461C01155A0017C319 /* GuildAccount.swift in Sources */,
+				89A8C5931C029E260017C319 /* AddGuildViewController.swift in Sources */,
 				89A8C58B1C01862C0017C319 /* SearchViewLogic.swift in Sources */,
 				89A8C53B1BFE12380017C319 /* ParseWrapper.swift in Sources */,
 				89A8C5351BFCD8F20017C319 /* AccountViewLogic.swift in Sources */,
 				89A8C5251BFB64CE0017C319 /* LoginViewController.swift in Sources */,
 				89A8C52E1BFB657B0017C319 /* Label.swift in Sources */,
+				89A8C5911C0298F30017C319 /* GuildProfileViewController.swift in Sources */,
 				89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */,
 				89A8C5701C0171FB0017C319 /* GuildExtensions.swift in Sources */,
 				89A8C5401C0111C20017C319 /* GuildProtocols.swift in Sources */,
 				89A8C5431C01120F0017C319 /* ViewLogic.swift in Sources */,
 				89A8C5781C0182DE0017C319 /* EventsViewController.swift in Sources */,
 				89A8C57B1C0184830017C319 /* GuildsViewLogic.swift in Sources */,
+				89A8C58F1C0216780017C319 /* Guild.swift in Sources */,
 				89A8C5761C0182AB0017C319 /* SearchViewController.swift in Sources */,
 				89A8C5321BFCC0350017C319 /* CreateAccountViewController.swift in Sources */,
 				89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */,

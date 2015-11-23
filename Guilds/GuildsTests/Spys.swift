@@ -65,6 +65,12 @@ public class ParseWrapperSpy: ParseWrapper {
         completionHandler?(self.spy_shouldLogin)
     }
     
+    var spy_queryedClass = false
+    public override func queryClass(name: String, completionHandler: ([PFObject] -> Void)?) {
+        self.spy_queryedClass = true
+        completionHandler?([])
+    }
+    
     public func getMockUser() -> PFUser {
         let user = PFUser()
         user["username"] = "username"

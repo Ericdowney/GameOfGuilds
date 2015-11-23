@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Guilds-->
+        <!--ICC Guilds-->
         <scene sceneID="IlB-ZD-YJG">
             <objects>
                 <viewController id="pAB-jz-af2" customClass="LoginViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,7 +217,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Guilds" id="TDd-jX-R7U"/>
+                    <navigationItem key="navigationItem" title="ICC Guilds" id="TDd-jX-R7U"/>
                     <connections>
                         <outlet property="password" destination="1qC-KW-aXb" id="l48-LK-3pa"/>
                         <outlet property="username" destination="YRV-Yq-G4U" id="jkW-cE-mnk"/>
@@ -610,7 +610,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d2i-3Y-mYy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.63921568630000003" alpha="0.75" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1764705882352941" green="0.49019607843137253" blue="0.76078431372549016" alpha="0.75" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

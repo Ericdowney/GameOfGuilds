@@ -53,11 +53,24 @@ public class ParseWrapper: NSObject {
         }
     }
     
+    public func logout(completionHandler: (Void -> Void)?) {
+        PFUser.logOutInBackgroundWithBlock { err in
+            completionHandler?()
+        }
+    }
+    
     public func validUsername(username: String, completionHandler: (Bool -> Void)?) {
         let query = PFUser.query()
         query?.whereKey("username", equalTo: username)
         query?.countObjectsInBackgroundWithBlock { count, err in
             completionHandler?( count == 0 )
+        }
+    }
+    
+    public func queryClass(name: String, completionHandler: ([PFObject] -> Void)?) {
+        let query = PFQuery(className: name)
+        query.findObjectsInBackgroundWithBlock { objs, err in
+            completionHandler?(objs ?? [])
         }
     }
 }

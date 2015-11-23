@@ -63,4 +63,20 @@ class ProfileViewControllerTests: XCTestCase {
         XCTAssertEqual(profileViewCtrl.profileJobTitle.text, "")
         XCTAssertEqual(profileViewCtrl.profileClient.text, "")
     }
+    
+    func testShouldReturnTwoForNumberOfSections() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let profileViewCtrl = storyboard.instantiateViewControllerWithIdentifier("ProfileViewCtrl") as! ProfileViewController
+        let table = UITableView()
+        parseSpy.authenticatedUser = parseSpy.getMockUser()
+        profileViewCtrl.accountLogic = accountLogic
+        let _ = profileViewCtrl.view
+        
+        // Action
+        let result = profileViewCtrl.numberOfSectionsInTableView(table)
+        
+        XCTAssertEqual(result, 2)
+    }
 }

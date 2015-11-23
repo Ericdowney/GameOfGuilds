@@ -12,4 +12,8 @@ import XCTest
 
 class GuildsViewLogicTests: XCTestCase {
 
+    
+    func testShouldGetAListOfGuilds() {
+        
+    }
 }

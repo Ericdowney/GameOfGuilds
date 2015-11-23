@@ -49,9 +49,13 @@ public class AccountViewLogic: ViewLogic {
         orignalCompletionHandler?(false)
     }
     
-    // MARK: - Log in
+    // MARK: - Log In/Out
     
     public func loginWithUsername(username: String, andPassword pass: String, completionHandler: (Bool -> Void)?) {
         self.parseWrapper.login(username, password: pass, completionHandler: completionHandler)
+    }
+    
+    public func logout(completionHandler: (Void -> Void)?) {
+        self.parseWrapper.logout(completionHandler)
     }
 }

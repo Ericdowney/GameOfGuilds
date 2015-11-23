@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--My Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewCtrl" id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +237,18 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="t10-HS-TpH"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="t10-HS-TpH">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wAz-3A-jex">
+                            <connections>
+                                <action selector="logout:" destination="BYZ-38-t0r" id="pai-6W-Wwh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="5Tq-Od-G9N">
+                            <connections>
+                                <action selector="editProfile:" destination="BYZ-38-t0r" id="bmK-WP-juN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="28o-zl-4Gk" id="RE3-rD-gUz"/>
                         <outlet property="profileClient" destination="nQL-YN-5v0" id="cgp-8e-1EV"/>
@@ -270,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="-336" y="330"/>
         </scene>
-        <!--Guilds View Controller-->
+        <!--Guilds-->
         <scene sceneID="iVe-jd-DXq">
             <objects>
-                <viewController id="2NA-NA-6xT" customClass="GuildsViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuildsViewCtrl" id="2NA-NA-6xT" customClass="GuildsViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnO-gn-qkC"/>
                         <viewControllerLayoutGuide type="bottom" id="eGI-tM-HGX"/>
@@ -286,7 +297,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="LoW-uc-IM8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="LoW-uc-IM8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LoW-uc-IM8" id="AQU-sR-qeY">
@@ -297,6 +308,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2NA-NA-6xT" id="Xbl-Vr-Qxx"/>
+                                    <outlet property="delegate" destination="2NA-NA-6xT" id="7No-p8-T1f"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -329,22 +344,25 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="5XO-De-sFc">
+                    <navigationItem key="navigationItem" title="Guilds" id="5XO-De-sFc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XOh-vw-3ag">
                             <connections>
                                 <segue destination="Y3D-h3-aWh" kind="show" id="EgH-lb-foC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="guildsTable" destination="pIU-49-fRB" id="wZm-Lu-oHv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDj-ej-BhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1347" y="87.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Guild Profile View Controller-->
         <scene sceneID="19u-KG-pkw">
             <objects>
-                <viewController id="l4J-t8-XbJ" sceneMemberID="viewController">
+                <viewController id="l4J-t8-XbJ" customClass="GuildProfileViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NU6-vi-Ut7"/>
                         <viewControllerLayoutGuide type="bottom" id="CZD-pX-Kjb"/>
@@ -396,7 +414,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="483" id="06B-y5-v0X">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="572"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="508"/>
                                             </constraint>
                                         </constraints>
                                         <prototypes>
@@ -420,8 +438,8 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ZtP-CB-tKv"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="gZc-Sh-6jP"/>
+                                            <outlet property="dataSource" destination="l4J-t8-XbJ" id="P5w-St-Rg8"/>
+                                            <outlet property="delegate" destination="l4J-t8-XbJ" id="U1B-lW-HZm"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -498,15 +516,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="guildImageView" destination="ycM-kJ-5c7" id="8t6-DV-gnG"/>
+                        <outlet property="guildMembersTable" destination="sKN-Yw-DyF" id="UZD-eE-Hlj"/>
+                        <outlet property="guildName" destination="0xT-pP-cBs" id="TfG-rM-8KH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZa-73-pVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2365.5" y="-586.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Guild View Controller-->
         <scene sceneID="7pF-6i-bFO">
             <objects>
-                <viewController id="Y3D-h3-aWh" sceneMemberID="viewController">
+                <viewController id="Y3D-h3-aWh" customClass="AddGuildViewController" customModule="Guilds" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pB2-aK-RJy"/>
                         <viewControllerLayoutGuide type="bottom" id="pBW-Aa-Uz2"/>
@@ -685,6 +708,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BaU-14-Kru"/>
+        <segue reference="ilc-m2-hWc"/>
     </inferredMetricsTieBreakers>
 </document>
