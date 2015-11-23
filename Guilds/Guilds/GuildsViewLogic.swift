@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 public class GuildsViewLogic: ViewLogic {
 
@@ -14,11 +15,26 @@ public class GuildsViewLogic: ViewLogic {
         self.parseWrapper.queryClass("Guild") { objs -> Void in
             var guilds: [Guild] = []
             for obj in objs {
+                let id = obj.objectId!
                 let name = obj["guildName"] as! String
                 let members = obj["members"] as AnyObject
                 let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
-//                let tags = obj["tags"]
-                let aGuild = Guild(guildName: name, guildImage: image, members: members, tags: NSObject())
+                let aGuild = Guild(objectId: id, guildName: name, guildImage: image, members: members, tags: NSObject())
+                guilds.append(aGuild)
+            }
+            completionHandler?(guilds)
+        }
+    }
+    
+    public func getUserGuilds(completionHandler: ([Guild] -> Void)?) {
+        self.parseWrapper.getMemberGuilds { objs in
+            var guilds: [Guild] = []
+            for obj in objs {
+                let id = obj.objectId!
+                let name = obj["guildName"] as! String
+                let members = obj["members"] as AnyObject
+                let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
+                let aGuild = Guild(objectId: id, guildName: name, guildImage: image, members: members, tags: NSObject())
                 guilds.append(aGuild)
             }
             completionHandler?(guilds)
@@ -34,5 +50,13 @@ public class GuildsViewLogic: ViewLogic {
         self.parseWrapper.saveObject("Guild", dictionary: info) { success in
             completionHandler?()
         }
+    }
+    
+    public func joinGuild(guild: Guild) {
+        self.parseWrapper.addCurrentUserToGuild(guild.objectId)
+    }
+    
+    public func getMembersFromGuild(guild: Guild, completionHandler: ([PFUser] -> Void)?) {
+        self.parseWrapper.queryRelation(guild.members as! PFRelation, completionHandler: completionHandler)
     }
 }

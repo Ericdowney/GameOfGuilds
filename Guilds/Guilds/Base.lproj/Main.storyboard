@@ -256,6 +256,7 @@
                         <outlet property="profileClient" destination="nQL-YN-5v0" id="cgp-8e-1EV"/>
                         <outlet property="profileJobTitle" destination="fBE-Ee-t9M" id="qwh-Qu-0ma"/>
                         <outlet property="profileName" destination="Yhw-hm-RY3" id="4oS-D8-ubZ"/>
+                        <outlet property="profileTable" destination="mgy-3N-lZF" id="52T-53-szF"/>
                         <segue destination="l4J-t8-XbJ" kind="show" identifier="guildProfilePage" id="BaU-14-Kru"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@
 import UIKit
 
 public struct Guild {
+    var objectId: String
     var guildName: String
     var guildImage: UIImage?
     var members: AnyObject

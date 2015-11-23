@@ -12,12 +12,14 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     
     var accountLogic: AccountViewLogic?
     var guildsLogic: GuildsViewLogic?
+    var guilds: [Guild] = []
 
     @IBOutlet weak var imageView: ImageView!
     
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileJobTitle: UILabel!
     @IBOutlet weak var profileClient: UILabel!
+    @IBOutlet weak var profileTable: UITableView!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,29 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
         self.profileName.text = "\(data.firstName!) \(data.lastName!)"
         self.profileJobTitle.text = "Some Title"
         self.profileClient.text = "Some Client"
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.guildsLogic?.getUserGuilds { guilds in
+            self.guilds = guilds
+            self.profileTable.reloadData()
+        }
+    }
+    
+    // MARK: - Segue
+    
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        guard let guildProfileViewCtrl = segue.destinationViewController as? GuildProfileViewController else {
+            return;
+        }
+        guard let indexPath = self.profileTable.indexPathForSelectedRow else {
+            return;
+        }
+        self.profileTable.deselectRowAtIndexPath(indexPath, animated: true)
+        guildProfileViewCtrl.setGuild(self.guilds[indexPath.row])
     }
     
     // MARK: - Actions
@@ -55,6 +80,9 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return self.guilds.count;
+        }
         return 0;
     }
     
@@ -66,6 +94,7 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
         
         if indexPath.section == 0 {
+            cell.textLabel?.text = self.guilds[indexPath.row].guildName
             cell.accessoryType = .DisclosureIndicator
         }
         
@@ -73,7 +102,6 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
             self.performSegueWithIdentifier("guildProfilePage", sender: self)
         }

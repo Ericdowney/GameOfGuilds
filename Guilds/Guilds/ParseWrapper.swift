@@ -24,6 +24,24 @@ public class ParseWrapper: NSObject {
         }
     }
     
+    public func addCurrentUserToGuild(objectId: String) {
+        let query = PFQuery(className: "Guild")
+        query.getObjectInBackgroundWithId(objectId) { opObj, err in
+            if let obj = opObj {
+                let relation = self.authenticatedUser?.relationForKey("guilds")
+                relation?.addObject(obj)
+                self.authenticatedUser?.saveInBackground()
+            }
+        }
+    }
+    
+    public func getMemberGuilds(completionHandler: ([PFObject] -> Void)?) {
+        let query = (self.authenticatedUser?["guilds"] as! PFRelation).query()
+        query?.findObjectsInBackgroundWithBlock { objs, err in
+            completionHandler?(objs ?? [])
+        }
+    }
+    
     public func saveUser(dictionary: [String: AnyObject], completionHandler: (Bool -> Void)?) {
         let user = PFUser()
         for (key, value) in dictionary {
@@ -95,5 +113,12 @@ public class ParseWrapper: NSObject {
         }
         catch _ {}
         return nil;
+    }
+    
+    public func queryRelation(relation: PFRelation, completionHandler: ([PFUser] -> Void)?) {
+        let query = relation.query()
+        query?.findObjectsInBackgroundWithBlock { users, err in
+            completionHandler?(users as? [PFUser] ?? [])
+        }
     }
 }

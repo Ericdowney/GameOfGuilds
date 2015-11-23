@@ -11,6 +11,8 @@ import UIKit
 public class GuildProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var currentGuild: Guild?
+    var guildLogic: GuildsViewLogic?
+    var members: NSMutableArray?
     
     @IBOutlet weak var guildImageView: ImageView!
     @IBOutlet weak var guildName: UILabel!
@@ -19,8 +21,22 @@ public class GuildProfileViewController: UIViewController, UITableViewDataSource
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        if self.guildLogic == nil {
+            let wrapper = (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper
+            self.guildLogic = GuildsViewLogic(wrapper: wrapper)
+        }
+        
         self.guildName.text = self.currentGuild?.guildName
         self.guildImageView.image = self.currentGuild?.guildImage
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join", style: .Done, target: self, action: "joinGuild:")
+        
+        self.guildLogic?.getMembersFromGuild(self.currentGuild!) { users in
+            for i in users {
+                self.members?.addObject(i)
+            }
+            self.guildMembersTable.reloadData()
+        }
     }
     
     // MARK: - Actions
@@ -29,10 +45,14 @@ public class GuildProfileViewController: UIViewController, UITableViewDataSource
         self.currentGuild = guild
     }
     
+    func joinGuild(sender: AnyObject) {
+        self.guildLogic!.joinGuild(self.currentGuild!)
+    }
+    
     // MARK: - Table View
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentGuild?.members.count ?? 0;
+        return self.members?.count ?? 0;
     }
     
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
