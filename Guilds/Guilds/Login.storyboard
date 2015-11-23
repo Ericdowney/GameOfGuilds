@@ -67,153 +67,94 @@
                                 </subviews>
                                 <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uq9-8l-Kwx">
-                                <rect key="frame" x="0.0" y="104" width="243" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-UQ-cRE" customClass="Button" customModule="Guilds" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="bI2-IR-TTU"/>
-                                            <constraint firstAttribute="width" secondItem="LEL-UQ-cRE" secondAttribute="height" multiplier="180:29" id="gWo-xi-LKA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" red="0.81568627449999997" green="0.29411764709999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.81568627449999997" green="0.29411764709999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="bI2-IR-TTU"/>
-                                                <exclude reference="gWo-xi-LKA"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="bI2-IR-TTU"/>
-                                                <include reference="gWo-xi-LKA"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="login:" destination="pAB-jz-af2" eventType="touchUpInside" id="MXz-0y-Co0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iw8-C4-6x0" customClass="Button" customModule="Guilds" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="0.0" width="62" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Iw8-C4-6x0" secondAttribute="height" multiplier="180:29" id="QbY-qm-fPH"/>
-                                            <constraint firstAttribute="height" constant="58" id="uiF-1x-sY1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Forgot?">
-                                            <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.56862745100000001" green="0.56862745100000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="QbY-qm-fPH"/>
-                                                <exclude reference="uiF-1x-sY1"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="QbY-qm-fPH"/>
-                                                <include reference="uiF-1x-sY1"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="Unu-N6-vVm" kind="show" id="Qlm-54-a9K"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaj-bT-Bb5" customClass="Button" customModule="Guilds" customModuleProvider="target">
-                                        <rect key="frame" x="127" y="0.0" width="116" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="iaj-bT-Bb5" secondAttribute="height" multiplier="180:29" id="XS9-B4-Ulk"/>
-                                            <constraint firstAttribute="height" constant="58" id="kF0-5l-FOa"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Create Acount">
-                                            <color key="titleColor" red="1" green="0.78109622980000004" blue="0.1811390578" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.78109622980000004" blue="0.1811390578" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="XS9-B4-Ulk"/>
-                                                <exclude reference="kF0-5l-FOa"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="XS9-B4-Ulk"/>
-                                                <include reference="kF0-5l-FOa"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="KnZ-UI-05g" kind="show" id="C7e-jP-GKC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-3N-Xvj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Don't have an account? Click Here"/>
+                                <connections>
+                                    <segue destination="KnZ-UI-05g" kind="show" id="Vo7-Pv-8io"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-UQ-cRE" customClass="Button" customModule="Guilds" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Og3-uJ-gaw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Og3-uJ-gaw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Og3-uJ-gaw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="login:" destination="pAB-jz-af2" eventType="touchUpInside" id="MXz-0y-Co0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N7X-b9-dve" firstAttribute="leading" secondItem="uq9-8l-Kwx" secondAttribute="leading" id="A7u-A5-lnT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uq9-8l-Kwx" secondAttribute="trailing" id="HAP-lx-hBe"/>
-                            <constraint firstItem="uq9-8l-Kwx" firstAttribute="top" secondItem="N7X-b9-dve" secondAttribute="bottom" constant="8" symbolic="YES" id="RkQ-KE-06p"/>
+                            <constraint firstItem="kbT-3N-Xvj" firstAttribute="trailing" secondItem="N7X-b9-dve" secondAttribute="trailing" id="2Wj-rd-W9A"/>
+                            <constraint firstItem="kbT-3N-Xvj" firstAttribute="top" secondItem="N7X-b9-dve" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ti-oH-MRE"/>
+                            <constraint firstItem="LEL-UQ-cRE" firstAttribute="trailing" secondItem="kbT-3N-Xvj" secondAttribute="trailing" id="8ib-yY-54x"/>
+                            <constraint firstItem="kbT-3N-Xvj" firstAttribute="leading" secondItem="N7X-b9-dve" secondAttribute="leading" id="B70-Ob-0zT"/>
+                            <constraint firstItem="LEL-UQ-cRE" firstAttribute="leading" secondItem="kbT-3N-Xvj" secondAttribute="leading" id="EHa-bY-fpe"/>
                             <constraint firstItem="N7X-b9-dve" firstAttribute="leading" secondItem="tHe-zJ-rby" secondAttribute="leadingMargin" id="mVt-xj-tLN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N7X-b9-dve" secondAttribute="trailing" id="nOz-OD-J7x"/>
                             <constraint firstItem="N7X-b9-dve" firstAttribute="top" secondItem="OBt-Xs-GcP" secondAttribute="bottom" constant="8" symbolic="YES" id="pnD-l4-wvN">
-                                <variation key="heightClass=regular-widthClass=compact" constant="28"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="150"/>
                             </constraint>
+                            <constraint firstAttribute="bottom" secondItem="LEL-UQ-cRE" secondAttribute="bottom" constant="20" symbolic="YES" id="sSw-W5-vfN"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kbT-3N-Xvj"/>
+                                <exclude reference="LEL-UQ-cRE"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="A7u-A5-lnT"/>
                                 <exclude reference="mVt-xj-tLN"/>
                                 <exclude reference="nOz-OD-J7x"/>
                                 <exclude reference="pnD-l4-wvN"/>
-                                <exclude reference="HAP-lx-hBe"/>
-                                <exclude reference="RkQ-KE-06p"/>
+                                <exclude reference="2Wj-rd-W9A"/>
+                                <exclude reference="8Ti-oH-MRE"/>
+                                <exclude reference="B70-Ob-0zT"/>
+                                <exclude reference="8ib-yY-54x"/>
+                                <exclude reference="EHa-bY-fpe"/>
+                                <exclude reference="sSw-W5-vfN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kbT-3N-Xvj"/>
+                                <include reference="LEL-UQ-cRE"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="A7u-A5-lnT"/>
                                 <include reference="mVt-xj-tLN"/>
                                 <include reference="nOz-OD-J7x"/>
                                 <include reference="pnD-l4-wvN"/>
-                                <include reference="HAP-lx-hBe"/>
-                                <include reference="RkQ-KE-06p"/>
+                                <include reference="2Wj-rd-W9A"/>
+                                <include reference="8Ti-oH-MRE"/>
+                                <include reference="B70-Ob-0zT"/>
+                                <include reference="8ib-yY-54x"/>
+                                <include reference="EHa-bY-fpe"/>
+                                <include reference="sSw-W5-vfN"/>
                             </mask>
                         </variation>
                     </view>
@@ -226,24 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57T-NQ-n7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="775.5" y="309.75"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="eE3-WW-DtZ">
-            <objects>
-                <viewController id="Unu-N6-vVm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cVP-AT-oGQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="HXC-47-YEn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Sng-Ul-XkR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2GP-RF-qYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1560" y="95.25"/>
         </scene>
         <!--Create Account-->
         <scene sceneID="A58-C7-5YI">
@@ -522,7 +445,9 @@
                                     <constraint firstAttribute="trailing" secondItem="ao7-jC-I3l" secondAttribute="trailing" constant="20" id="JZ1-wc-d3C"/>
                                     <constraint firstItem="5OT-Ji-r6o" firstAttribute="top" secondItem="ao7-jC-I3l" secondAttribute="bottom" constant="8" symbolic="YES" id="VZ6-2y-xqB"/>
                                     <constraint firstAttribute="trailing" secondItem="5OT-Ji-r6o" secondAttribute="trailing" constant="20" id="YLG-SD-7Zr"/>
-                                    <constraint firstAttribute="bottom" secondItem="pTz-p8-KSl" secondAttribute="bottom" constant="190" id="hVb-Gv-FZ3"/>
+                                    <constraint firstAttribute="bottom" secondItem="pTz-p8-KSl" secondAttribute="bottom" constant="190" id="hVb-Gv-FZ3">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="190"/>
+                                    </constraint>
                                     <constraint firstItem="ao7-jC-I3l" firstAttribute="top" secondItem="gVJ-NE-szk" secondAttribute="top" constant="20" id="hbg-sm-iba"/>
                                     <constraint firstItem="5OT-Ji-r6o" firstAttribute="centerX" secondItem="gVJ-NE-szk" secondAttribute="centerX" id="mkC-P5-4Vl"/>
                                     <constraint firstItem="5OT-Ji-r6o" firstAttribute="leading" secondItem="gVJ-NE-szk" secondAttribute="leading" constant="20" id="vd4-rq-Sou"/>
@@ -566,7 +491,9 @@
                         <constraints>
                             <constraint firstItem="gVJ-NE-szk" firstAttribute="bottom" secondItem="OLU-Cl-VYD" secondAttribute="top" id="AnK-cg-fDg"/>
                             <constraint firstAttribute="trailing" secondItem="gVJ-NE-szk" secondAttribute="trailing" id="S5v-a3-1Fp"/>
-                            <constraint firstItem="gVJ-NE-szk" firstAttribute="top" secondItem="9s6-4J-CBV" secondAttribute="bottom" id="TBM-ni-xbn"/>
+                            <constraint firstItem="gVJ-NE-szk" firstAttribute="top" secondItem="9s6-4J-CBV" secondAttribute="bottom" id="TBM-ni-xbn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="gVJ-NE-szk" firstAttribute="leading" secondItem="036-Pd-yFj" secondAttribute="leading" id="dCD-2o-wt6"/>
                         </constraints>
                         <variation key="default">
@@ -610,7 +537,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d2i-3Y-mYy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1764705882352941" green="0.49019607843137253" blue="0.76078431372549016" alpha="0.75" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1764705882352941" green="0.49019607843137253" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

@@ -55,7 +55,7 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return 0;
     }
     
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -73,6 +73,7 @@ public class ProfileViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 {
             self.performSegueWithIdentifier("guildProfilePage", sender: self)
         }

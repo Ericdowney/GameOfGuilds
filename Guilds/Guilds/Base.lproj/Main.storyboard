@@ -92,7 +92,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="bqc-8k-mTI"/>
                                         </connections>
                                     </tableView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="28o-zl-4Gk" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="28o-zl-4Gk" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="upF-6M-sbe"/>
@@ -239,11 +239,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="t10-HS-TpH">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="wAz-3A-jex">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="BYZ-38-t0r" id="pai-6W-Wwh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="5Tq-Od-G9N">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editProfile:" destination="BYZ-38-t0r" id="bmK-WP-juN"/>
                             </connections>
@@ -346,6 +348,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Guilds" id="5XO-De-sFc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XOh-vw-3ag">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Y3D-h3-aWh" kind="show" id="EgH-lb-foC"/>
                             </connections>
@@ -373,7 +376,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQM-4l-2jp">
                                 <rect key="frame" x="-20" y="0.0" width="440" height="754"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-kJ-5c7" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-kJ-5c7" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
                                         <rect key="frame" x="28" y="20" width="150" height="151"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="151" id="Ha8-4s-YAT"/>
@@ -536,8 +539,170 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dex-Hy-70b">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NIU-X1-0wn" customClass="ImageView" customModule="Guilds" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gvx-cc-GQl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gvx-cc-GQl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="gvx-cc-GQl"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Guild Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58c-sh-qOl">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ggi-9P-kPV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ggi-9P-kPV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ggi-9P-kPV"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Guild Description Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-Uy-ExQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="yh0-iY-QCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yh0-iY-QCt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="yh0-iY-QCt"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="day-YQ-29e" customClass="Button" customModule="Guilds" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="fzd-Kf-T6b"/>
+                                </constraints>
+                                <state key="normal" title="Create Guild">
+                                    <color key="titleColor" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fzd-Kf-T6b"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fzd-Kf-T6b"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createGuild:" destination="Y3D-h3-aWh" eventType="touchUpInside" id="rEf-UU-y0N"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NIU-X1-0wn" firstAttribute="leading" secondItem="dex-Hy-70b" secondAttribute="leadingMargin" constant="80" id="4NH-ZC-pQZ"/>
+                            <constraint firstItem="NIU-X1-0wn" firstAttribute="top" secondItem="dex-Hy-70b" secondAttribute="top" constant="20" symbolic="YES" id="6ik-Cq-2aj"/>
+                            <constraint firstItem="NIU-X1-0wn" firstAttribute="centerX" secondItem="58c-sh-qOl" secondAttribute="centerX" id="7dU-PW-h7E"/>
+                            <constraint firstItem="day-YQ-29e" firstAttribute="trailing" secondItem="dex-Hy-70b" secondAttribute="trailingMargin" id="Ekn-ay-ssO"/>
+                            <constraint firstItem="IDn-Uy-ExQ" firstAttribute="leading" secondItem="day-YQ-29e" secondAttribute="leading" id="gdU-z7-1a7"/>
+                            <constraint firstItem="IDn-Uy-ExQ" firstAttribute="top" secondItem="58c-sh-qOl" secondAttribute="bottom" constant="8" symbolic="YES" id="isF-mX-3XA"/>
+                            <constraint firstItem="IDn-Uy-ExQ" firstAttribute="trailing" secondItem="day-YQ-29e" secondAttribute="trailing" id="oyY-mS-GVF"/>
+                            <constraint firstItem="58c-sh-qOl" firstAttribute="leading" secondItem="dex-Hy-70b" secondAttribute="leadingMargin" id="pCM-Ut-X0n"/>
+                            <constraint firstItem="58c-sh-qOl" firstAttribute="top" secondItem="NIU-X1-0wn" secondAttribute="bottom" constant="8" symbolic="YES" id="qpL-wt-WqO"/>
+                            <constraint firstItem="58c-sh-qOl" firstAttribute="leading" secondItem="IDn-Uy-ExQ" secondAttribute="leading" id="rvZ-dL-l7u"/>
+                            <constraint firstItem="pBW-Aa-Uz2" firstAttribute="top" secondItem="day-YQ-29e" secondAttribute="bottom" constant="8" symbolic="YES" id="wcI-bu-Wbo"/>
+                            <constraint firstItem="IDn-Uy-ExQ" firstAttribute="trailing" secondItem="58c-sh-qOl" secondAttribute="trailing" id="wkj-mF-bH7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NIU-X1-0wn"/>
+                                <exclude reference="58c-sh-qOl"/>
+                                <exclude reference="IDn-Uy-ExQ"/>
+                                <exclude reference="day-YQ-29e"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4NH-ZC-pQZ"/>
+                                <exclude reference="6ik-Cq-2aj"/>
+                                <exclude reference="7dU-PW-h7E"/>
+                                <exclude reference="pCM-Ut-X0n"/>
+                                <exclude reference="qpL-wt-WqO"/>
+                                <exclude reference="rvZ-dL-l7u"/>
+                                <exclude reference="gdU-z7-1a7"/>
+                                <exclude reference="isF-mX-3XA"/>
+                                <exclude reference="oyY-mS-GVF"/>
+                                <exclude reference="wkj-mF-bH7"/>
+                                <exclude reference="Ekn-ay-ssO"/>
+                                <exclude reference="wcI-bu-Wbo"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NIU-X1-0wn"/>
+                                <include reference="58c-sh-qOl"/>
+                                <include reference="IDn-Uy-ExQ"/>
+                                <include reference="day-YQ-29e"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4NH-ZC-pQZ"/>
+                                <include reference="6ik-Cq-2aj"/>
+                                <include reference="7dU-PW-h7E"/>
+                                <include reference="pCM-Ut-X0n"/>
+                                <include reference="qpL-wt-WqO"/>
+                                <include reference="rvZ-dL-l7u"/>
+                                <include reference="gdU-z7-1a7"/>
+                                <include reference="isF-mX-3XA"/>
+                                <include reference="oyY-mS-GVF"/>
+                                <include reference="wkj-mF-bH7"/>
+                                <include reference="Ekn-ay-ssO"/>
+                                <include reference="wcI-bu-Wbo"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="guildDescription" destination="IDn-Uy-ExQ" id="pjd-H1-2NU"/>
+                        <outlet property="guildImage" destination="NIU-X1-0wn" id="fuB-yl-yFj"/>
+                        <outlet property="guildName" destination="58c-sh-qOl" id="jrg-EH-bZN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6Q-yX-Akw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -677,6 +842,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="08X-1e-JIV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -696,6 +865,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NC1-3c-F4r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -708,6 +881,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ilc-m2-hWc"/>
+        <segue reference="BaU-14-Kru"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,10 +6,11 @@
 //  Copyright © 2015 ICCT. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct Guild {
     var guildName: String
+    var guildImage: UIImage?
     var members: AnyObject
     var tags: AnyObject
 }

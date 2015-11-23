@@ -16,11 +16,23 @@ public class GuildsViewLogic: ViewLogic {
             for obj in objs {
                 let name = obj["guildName"] as! String
                 let members = obj["members"] as AnyObject
+                let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
 //                let tags = obj["tags"]
-                let aGuild = Guild(guildName: name, members: members, tags: NSObject())
+                let aGuild = Guild(guildName: name, guildImage: image, members: members, tags: NSObject())
                 guilds.append(aGuild)
             }
             completionHandler?(guilds)
+        }
+    }
+    
+    public func createGuild(guildName: String, description: String, image: UIImage, completionHandler: (Void -> Void)?) {
+        let info = [
+            "guildName": guildName,
+            "description": description,
+            "guildImage": self.parseWrapper.saveImage(image)
+        ]
+        self.parseWrapper.saveObject("Guild", dictionary: info) { success in
+            completionHandler?()
         }
     }
 }

@@ -16,3 +16,13 @@ extension UINavigationController {
             CATransaction.commit()
     }
 }
+
+extension UIImage {
+    func imageWithImage(scaledToSize newSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        self.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage;
+    }
+}

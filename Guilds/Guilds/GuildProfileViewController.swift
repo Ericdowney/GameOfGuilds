@@ -20,6 +20,7 @@ public class GuildProfileViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
         
         self.guildName.text = self.currentGuild?.guildName
+        self.guildImageView.image = self.currentGuild?.guildImage
     }
     
     // MARK: - Actions

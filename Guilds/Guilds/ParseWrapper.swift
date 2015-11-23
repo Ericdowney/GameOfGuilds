@@ -73,4 +73,27 @@ public class ParseWrapper: NSObject {
             completionHandler?(objs ?? [])
         }
     }
+    
+    public func saveImage(image: UIImage) -> PFFile {
+        let imageData = UIImagePNGRepresentation(image)
+        let file = PFFile(data: imageData!)
+        file!.saveInBackground()
+        return file!;
+    }
+    
+    public func createRelationToUser() -> PFRelation {
+        let relation = PFRelation()
+        relation.addObject(self.authenticatedUser!)
+        return relation;
+    }
+    
+    public func getImageFromFile(obj: AnyObject?) -> UIImage? {
+        let file = obj as! PFFile
+        do {
+            let imageData = try file.getData()
+            return UIImage(data: imageData);
+        }
+        catch _ {}
+        return nil;
+    }
 }

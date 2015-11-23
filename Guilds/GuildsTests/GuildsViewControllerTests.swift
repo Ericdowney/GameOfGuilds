@@ -23,7 +23,6 @@ class GuildsViewControllerTests: XCTestCase {
         let _ = guildsViewCtrl.view
         
         XCTAssertNotNil(guildsViewCtrl.guildLogic)
-        XCTAssertTrue(wrapper.spy_queryedClass)
         
         delegate.parseWrapper = ParseWrapper()
     }
@@ -39,6 +38,5 @@ class GuildsViewControllerTests: XCTestCase {
         let _ = guildsViewCtrl.view
         
         XCTAssertNotNil(guildsViewCtrl.guildLogic)
-        XCTAssertTrue(wrapper.spy_queryedClass)
     }
 }

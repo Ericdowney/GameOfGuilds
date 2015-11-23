@@ -22,6 +22,10 @@ public class GuildsViewController: UIViewController, UITableViewDataSource, UITa
             let wrapper = (UIApplication.sharedApplication().delegate as! AppDelegate).parseWrapper
             self.guildLogic = GuildsViewLogic(wrapper: wrapper)
         }
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         self.guildLogic?.getGuilds { gds in
             self.guilds = gds

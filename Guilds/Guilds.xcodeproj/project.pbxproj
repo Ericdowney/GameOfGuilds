@@ -45,6 +45,9 @@
 		89A8C58F1C0216780017C319 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C58E1C0216780017C319 /* Guild.swift */; };
 		89A8C5911C0298F30017C319 /* GuildProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5901C0298F30017C319 /* GuildProfileViewController.swift */; };
 		89A8C5931C029E260017C319 /* AddGuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8C5921C029E260017C319 /* AddGuildViewController.swift */; };
+		89A8C5951C02B65F0017C319 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A8C5941C02B65F0017C319 /* IQKeyboardManagerSwift.framework */; };
+		89A8C5961C02B6770017C319 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A8C5941C02B65F0017C319 /* IQKeyboardManagerSwift.framework */; };
+		89A8C5971C02B6770017C319 /* IQKeyboardManagerSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89A8C5941C02B65F0017C319 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89B5DE061BE2C00300DD06C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */; };
 		89B5DE081BE2C00300DD06C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */; };
 		89B5DE0B1BE2C00300DD06C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B5DE091BE2C00300DD06C5 /* Main.storyboard */; };
@@ -82,6 +85,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				89B5DEAB1BEC319C00DD06C5 /* Bolts.framework in CopyFiles */,
+				89A8C5971C02B6770017C319 /* IQKeyboardManagerSwift.framework in CopyFiles */,
 				89B5DEAC1BEC319C00DD06C5 /* Parse.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +130,7 @@
 		89A8C58E1C0216780017C319 /* Guild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
 		89A8C5901C0298F30017C319 /* GuildProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuildProfileViewController.swift; sourceTree = "<group>"; };
 		89A8C5921C029E260017C319 /* AddGuildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuildViewController.swift; sourceTree = "<group>"; };
+		89A8C5941C02B65F0017C319 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = ../Rome/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		89B5DE021BE2C00300DD06C5 /* Guilds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guilds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B5DE051BE2C00300DD06C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B5DE071BE2C00300DD06C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B5DEA81BEC315D00DD06C5 /* Parse.framework in Frameworks */,
+				89A8C5951C02B65F0017C319 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				89A8C5961C02B6770017C319 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				89B5DEA71BEC315D00DD06C5 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +298,7 @@
 		89B5DDF91BE2C00300DD06C5 = {
 			isa = PBXGroup;
 			children = (
+				89A8C5941C02B65F0017C319 /* IQKeyboardManagerSwift.framework */,
 				89B5DEA41BEC315D00DD06C5 /* Bolts.framework */,
 				89B5DEA51BEC315D00DD06C5 /* Parse.framework */,
 				89B5DE041BE2C00300DD06C5 /* Guilds */,
