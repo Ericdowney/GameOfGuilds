@@ -409,11 +409,11 @@
                                             <constraint firstAttribute="height" constant="58" id="e6U-1o-RXa"/>
                                         </constraints>
                                         <state key="normal" title="Create">
-                                            <color key="titleColor" red="1" green="0.78109622980000004" blue="0.1811390578" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.78109622980000004" blue="0.1811390578" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.1764705882" green="0.49019607840000001" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
                                                 <real key="value" value="5"/>

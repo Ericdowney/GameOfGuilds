@@ -66,9 +66,46 @@ public class ParseWrapperSpy: ParseWrapper {
     }
     
     var spy_queryedClass = false
-    public override func queryClass(name: String, completionHandler: ([PFObject] -> Void)?) {
+    var spy_query_objsToReturn: [AnyObject] = []
+    public override func queryClass(name: String, completionHandler: ([AnyObject] -> Void)?) {
         self.spy_queryedClass = true
+        completionHandler?(self.spy_query_objsToReturn)
+    }
+    
+    var spy_imageFromFile = false
+    public override func getImageFromFile(obj: AnyObject?) -> UIImage? {
+        self.spy_imageFromFile = true
+        return nil;
+    }
+    
+    var spy_memberGuilds = false
+    var spy_memberGuilds_objsToReturn: [AnyObject] = []
+    public override func getMemberGuilds(completionHandler: ([AnyObject] -> Void)?) {
+        self.spy_memberGuilds = false
+        completionHandler?(self.spy_memberGuilds_objsToReturn)
+    }
+    
+    var spy_addUserToGuild = false
+    public override func addCurrentUserToGuild(objectId: String) {
+        self.spy_addUserToGuild = true
+    }
+    
+    var spy_queryRelation = false
+    public override func queryRelation(relation: PFRelation, completionHandler: ([PFUser] -> Void)?) {
+        self.spy_queryRelation = true
         completionHandler?([])
+    }
+    
+    var spy_savedImage = false
+    public override func saveImage(image: UIImage) -> PFFile {
+        self.spy_savedImage = true
+        return PFFile(data: NSData())!;
+    }
+    
+    var spy_logout = false
+    public override func logout(completionHandler: (Void -> Void)?) {
+        self.spy_logout = true
+        completionHandler?()
     }
     
     public func getMockUser() -> PFUser {

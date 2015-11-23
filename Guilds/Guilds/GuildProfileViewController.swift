@@ -30,13 +30,7 @@ public class GuildProfileViewController: UIViewController, UITableViewDataSource
         self.guildImageView.image = self.currentGuild?.guildImage
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join", style: .Done, target: self, action: "joinGuild:")
-        
-        self.guildLogic?.getMembersFromGuild(self.currentGuild!) { users in
-            for i in users {
-                self.members?.addObject(i)
-            }
-            self.guildMembersTable.reloadData()
-        }
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
     }
     
     // MARK: - Actions

@@ -35,7 +35,7 @@ public class ParseWrapper: NSObject {
         }
     }
     
-    public func getMemberGuilds(completionHandler: ([PFObject] -> Void)?) {
+    public func getMemberGuilds(completionHandler: ([AnyObject] -> Void)?) {
         let query = (self.authenticatedUser?["guilds"] as! PFRelation).query()
         query?.findObjectsInBackgroundWithBlock { objs, err in
             completionHandler?(objs ?? [])
@@ -85,7 +85,7 @@ public class ParseWrapper: NSObject {
         }
     }
     
-    public func queryClass(name: String, completionHandler: ([PFObject] -> Void)?) {
+    public func queryClass(name: String, completionHandler: ([AnyObject] -> Void)?) {
         let query = PFQuery(className: name)
         query.findObjectsInBackgroundWithBlock { objs, err in
             completionHandler?(objs ?? [])

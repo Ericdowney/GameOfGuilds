@@ -123,4 +123,13 @@ class AccountViewLogicTests: XCTestCase {
         XCTAssertNil(result.firstName)
         XCTAssertNil(result.lastName)
     }
+    
+    func testShouldCallLogout() {
+        let parseSpy = ParseWrapperSpy()
+        let accountLogic = AccountViewLogic(wrapper: parseSpy)
+        
+        accountLogic.logout(nil)
+        
+        XCTAssertTrue(parseSpy.spy_logout)
+    }
 }

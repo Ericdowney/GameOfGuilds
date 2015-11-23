@@ -12,33 +12,28 @@ import Parse
 public class GuildsViewLogic: ViewLogic {
 
     public func getGuilds(completionHandler: ([Guild] -> Void)?) {
-        self.parseWrapper.queryClass("Guild") { objs -> Void in
-            var guilds: [Guild] = []
-            for obj in objs {
-                let id = obj.objectId!
-                let name = obj["guildName"] as! String
-                let members = obj["members"] as AnyObject
-                let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
-                let aGuild = Guild(objectId: id, guildName: name, guildImage: image, members: members, tags: NSObject())
-                guilds.append(aGuild)
-            }
-            completionHandler?(guilds)
+        self.parseWrapper.queryClass("Guild") { objs in
+            completionHandler?(self.getGuildsFromList(objs))
         }
     }
     
     public func getUserGuilds(completionHandler: ([Guild] -> Void)?) {
         self.parseWrapper.getMemberGuilds { objs in
-            var guilds: [Guild] = []
-            for obj in objs {
-                let id = obj.objectId!
-                let name = obj["guildName"] as! String
-                let members = obj["members"] as AnyObject
-                let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
-                let aGuild = Guild(objectId: id, guildName: name, guildImage: image, members: members, tags: NSObject())
-                guilds.append(aGuild)
-            }
-            completionHandler?(guilds)
+            completionHandler?(self.getGuildsFromList(objs))
         }
+    }
+    
+    private func getGuildsFromList(list: [AnyObject]) -> [Guild] {
+        var guilds: [Guild] = []
+        for obj in list {
+            let id = obj.objectId!
+            let name = obj.valueForKey("guildName")! as! String
+            let members = obj.valueForKey("members")! as AnyObject
+            let image = self.parseWrapper.getImageFromFile(obj["guildImage"])
+            let aGuild = Guild(objectId: id!, guildName: name, guildImage: image, members: members, tags: NSObject())
+            guilds.append(aGuild)
+        }
+        return guilds;
     }
     
     public func createGuild(guildName: String, description: String, image: UIImage, completionHandler: (Void -> Void)?) {
@@ -54,9 +49,5 @@ public class GuildsViewLogic: ViewLogic {
     
     public func joinGuild(guild: Guild) {
         self.parseWrapper.addCurrentUserToGuild(guild.objectId)
-    }
-    
-    public func getMembersFromGuild(guild: Guild, completionHandler: ([PFUser] -> Void)?) {
-        self.parseWrapper.queryRelation(guild.members as! PFRelation, completionHandler: completionHandler)
     }
 }
